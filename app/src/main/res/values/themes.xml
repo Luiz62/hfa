@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HFA" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary_color_app</item>
+        <item name="colorPrimaryDark">@color/primary_color_app</item>
+        <item name="colorAccent">@color/secodary_color_app</item>
+    </style>
+    <!--  Menu Style  -->
+    <style name="navigationTheme">
+        <!-- Color of text and icon when SELECTED -->
+        <item name="colorPrimary">@color/primary_color_app</item>
+        <!-- Background color when SELECTED -->
+        <item name="colorControlHighlight">@color/secodary_color_app</item>
+
+    </style>
+
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/text_input_box_stroke_black</item>
+        <item name="boxStrokeWidth">1dp</item>
+    </style>
+
+    <style name="ButtonStyleCyan" parent="Widget.AppCompat.Button">
+        <item name="background">@color/primary_color_app</item>
+    </style>
+</resources>
