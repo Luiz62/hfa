@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/primary_color_app"
     android:padding="30dp"
     tools:context=".common.signup.SignUp2">
 
@@ -30,10 +30,10 @@
                 android:id="@+id/signup_title_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/muli_black"
+                android:fontFamily="@font/muli"
                 android:text="@string/create_account"
                 android:textAllCaps="true"
-                android:textColor="@color/black"
+                android:textColor="@color/secodary_color_app"
                 android:layout_centerVertical="true"
                 android:textSize="40sp"
                 android:transitionName="transition_title_text" />
@@ -44,10 +44,10 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/ds_digital_bold"
+                android:fontFamily="@font/muli"
                 android:text="2/3"
                 android:layout_alignParentRight="true"
-                android:textColor="@color/black"
+                android:textColor="@color/secodary_color_app"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 android:padding="10dp"
@@ -68,8 +68,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/muli"
                 android:text="Sexo"
-                android:textColor="@color/black"
+                android:textColor="@color/secodary_color_app"
                 android:textSize="18sp" />
 
             <RadioGroup
@@ -84,6 +85,7 @@
                     android:id="@+id/male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli"
                     android:text="Masculino"
                     tools:ignore="TouchTargetSizeCheck" />
 
@@ -92,6 +94,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/muli"
                     android:text="Feminino"
                     tools:ignore="TouchTargetSizeCheck" />
 
@@ -100,6 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/muli"
                     android:text="Outros"
                     tools:ignore="TouchTargetSizeCheck" />
             </RadioGroup>
@@ -110,13 +114,14 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/black" />
+                android:background="@color/secodary_color_app" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/muli"
                 android:text="Data Nascimento"
-                android:textColor="@color/black"
+                android:textColor="@color/secodary_color_app"
                 android:textSize="18sp" />
 
             <DatePicker
@@ -136,27 +141,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@color/black"
+            android:background="@drawable/my_button_bg_black"
             android:elevation="5dp"
             android:onClick="call3rdSigupScreen"
-            android:text="@string/next"
-            android:textColor="@color/white"
-            android:transitionName="transition_next_btn" />
-
-
-        <Button
-            android:id="@+id/signup_login_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#00000000"
-            android:elevation="5dp"
             android:fontFamily="@font/muli"
-            android:text="@string/login"
-            android:textColor="@color/black"
-            android:transitionName="transition_login_btn" />
-
-
+            android:text="@string/next"
+            android:textColor="@color/primary_color_app"
+            android:transitionName="transition_next_btn" />
     </LinearLayout>
 
 </ScrollView>

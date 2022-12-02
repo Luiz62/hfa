@@ -30,6 +30,9 @@
     <color name="card3">#f7c59f</color>
     <color name="card4">#b8d7f5</color>
 
+    <!-- Red Colors -->
+    <color name="red">#FF0000</color>
+
     <!-- Blue Colors -->
     <color name="blue1">#B8DCFF</color>
     <color name="primary_color_app">#D3D3D3</color>

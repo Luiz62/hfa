@@ -4,7 +4,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="@color/colorPrimary"
+android:background="@color/primary_color_app"
 android:padding="30dp"
 android:transitionName="transition_signup"
 tools:context=".common.signup.SignUp1">
@@ -33,7 +33,7 @@ tools:context=".common.signup.SignUp1">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:fontFamily="@font/muli_black"
+            android:fontFamily="@font/muli"
             android:text="@string/create_account"
             android:textAllCaps="true"
             android:textColor="@color/secodary_color_app"
@@ -49,7 +49,7 @@ tools:context=".common.signup.SignUp1">
             android:layout_centerVertical="true"
             android:layout_marginTop="20dp"
             android:background="@drawable/circle_black_border"
-            android:fontFamily="@font/ds_digital_bold"
+            android:fontFamily="@font/muli"
             android:gravity="center"
             android:padding="10dp"
             android:text="1/3"
@@ -78,14 +78,17 @@ tools:context=".common.signup.SignUp1">
             app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
             app:endIconTint="@color/secodary_color_app"
-            app:hintTextColor="@color/black"
+            app:hintTextColor="@color/secodary_color_app"
             app:startIconDrawable="@drawable/field_full_name_icon_black"
-            app:startIconTint="@color/secodary_color_app">
+            app:startIconTint="@color/secodary_color_app"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorIconTint="@color/red"
+            app:errorTextColor="@color/red">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/muli_semibold"
+                android:fontFamily="@font/muli"
                 android:inputType="text"
                 android:textColor="@color/secodary_color_app"
                 android:textCursorDrawable="@null" />
@@ -105,12 +108,15 @@ tools:context=".common.signup.SignUp1">
             app:endIconTint="@color/secodary_color_app"
             app:hintTextColor="@color/secodary_color_app"
             app:startIconDrawable="@drawable/field_username_icon_black"
-            app:startIconTint="@color/secodary_color_app">
+            app:startIconTint="@color/secodary_color_app"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorIconTint="@color/red"
+            app:errorTextColor="@color/red">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/muli_semibold"
+                android:fontFamily="@font/muli"
                 android:inputType="text"
                 android:textColor="@color/secodary_color_app"
                 android:textCursorDrawable="@null" />
@@ -130,15 +136,20 @@ tools:context=".common.signup.SignUp1">
             app:endIconTint="@color/secodary_color_app"
             app:hintTextColor="@color/secodary_color_app"
             app:startIconDrawable="@drawable/field_email_icon_black"
-            app:startIconTint="@color/secodary_color_app">
+            app:startIconTint="@color/secodary_color_app"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorIconTint="@color/red"
+            app:errorTextColor="@color/red"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/muli_semibold"
+                android:fontFamily="@font/muli"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/secodary_color_app"
-                android:textCursorDrawable="@null" />
+                android:textCursorDrawable="@null"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -157,12 +168,16 @@ tools:context=".common.signup.SignUp1">
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/secodary_color_app"
             app:startIconDrawable="@drawable/field_password_icon_black"
-            app:startIconTint="@color/secodary_color_app">
+            app:startIconTint="@color/secodary_color_app"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorIconTint="@color/red"
+            app:errorTextColor="@color/red"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/muli_semibold"
+                android:fontFamily="@font/muli"
                 android:inputType="textPassword"
                 android:textColor="@color/secodary_color_app"
                 android:textCursorDrawable="@null" />
@@ -195,7 +210,7 @@ tools:context=".common.signup.SignUp1">
         android:fontFamily="@font/muli"
         android:onClick="callLoginFromSignUp"
         android:text="@string/login"
-        android:textColor="@color/black"
+        android:textColor="@color/secodary_color_app"
         android:transitionName="transition_login_btn" />
 
 

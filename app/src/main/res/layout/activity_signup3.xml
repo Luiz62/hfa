@@ -5,7 +5,7 @@
     android:id="@+id/signup_3rd_screen_scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/primary_color_app"
     android:padding="30dp"
     android:transitionName="transition_OTP_screen"
     tools:context=".common.signup.SignUp3">
@@ -34,10 +34,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/muli_black"
+                android:fontFamily="@font/muli"
                 android:text="@string/create_account"
                 android:textAllCaps="true"
-                android:textColor="@color/black"
+                android:textColor="@color/secodary_color_app"
                 android:textSize="40sp"
                 android:transitionName="transition_title_text" />
 
@@ -50,12 +50,12 @@
                 android:layout_centerVertical="true"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/circle_black_border"
-                android:fontFamily="@font/ds_digital_bold"
+                android:fontFamily="@font/muli"
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="3/3"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/secodary_color_app"
                 android:textSize="30sp"
                 android:transitionName="transition_slide_text" />
 
@@ -73,7 +73,7 @@
                 android:id="@+id/country_code_picker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/black_border_input"
+                android:background="@drawable/default_border_input"
                 android:padding="7dp"
                 app:ccp_showFlag="true"
                 app:ccp_showFullName="true"
@@ -86,21 +86,24 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/country_code_picker"
                 android:hint="@string/enter_phone_number"
-                android:textColorHint="@color/black"
-                app:boxStrokeColor="@color/black"
+                android:textColorHint="@color/secodary_color_app"
+                app:boxStrokeColor="@color/secodary_color_app"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
-                app:endIconTint="@color/black"
-                app:hintTextColor="@color/black"
+                app:endIconTint="@color/secodary_color_app"
+                app:hintTextColor="@color/secodary_color_app"
                 app:startIconDrawable="@drawable/field_phone_number_icon"
-                app:startIconTint="@color/black">
+                app:startIconTint="@color/secodary_color_app"
+                app:boxStrokeErrorColor="@color/red"
+                app:errorIconTint="@color/red"
+                app:errorTextColor="@color/red">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/muli_semibold"
+                    android:fontFamily="@font/muli"
                     android:inputType="phone"
-                    android:textColor="@color/black"
+                    android:textColor="@color/secodary_color_app"
                     android:textCursorDrawable="@null" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -110,12 +113,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@color/black"
+                android:background="@drawable/my_button_bg_black"
                 android:layout_below="@id/signup_phone_number"
                 android:elevation="5dp"
                 android:onClick="callVerifyOTPScreen"
                 android:text="@string/next"
-                android:textColor="@color/white"
+                android:textColor="@color/primary_color_app"
                 android:transitionName="transition_next_btn" />
 
             <RelativeLayout
@@ -136,21 +139,6 @@
             </RelativeLayout>
 
         </RelativeLayout>
-
-
-        <Button
-            android:id="@+id/signup_login_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#00000000"
-            android:elevation="5dp"
-            android:fontFamily="@font/muli"
-            android:text="@string/login"
-            android:textColor="@color/black"
-            android:transitionName="transition_login_btn" />
-
-
     </LinearLayout>
 
 </ScrollView>
