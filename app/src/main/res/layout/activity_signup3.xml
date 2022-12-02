@@ -73,7 +73,7 @@
                 android:id="@+id/country_code_picker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/black_border"
+                android:background="@drawable/black_border_input"
                 android:padding="7dp"
                 app:ccp_showFlag="true"
                 app:ccp_showFullName="true"
