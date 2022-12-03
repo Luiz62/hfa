@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "872928490171",
+    "project_id": "hfa-project-1af80",
+    "storage_bucket": "hfa-project-1af80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872928490171:android:29835514923b10aeef2f9e",
+        "android_client_info": {
+          "package_name": "br.edu.ifg.hfa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872928490171-f7gqnnsr2ljema6s4bai6uepk62701h8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.edu.ifg.hfa",
+            "certificate_hash": "5d2a24636e106dc311824e4ab3006000248f368e"
+          }
+        },
+        {
+          "client_id": "872928490171-b7r3c1p2a66p83b3ipu72voogtfepj8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB2pkkMfDYuUPppiv0BHTcOSDRQdn1nVY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872928490171-b7r3c1p2a66p83b3ipu72voogtfepj8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

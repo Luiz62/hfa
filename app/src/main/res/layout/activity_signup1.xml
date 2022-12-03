@@ -7,7 +7,7 @@ android:layout_height="match_parent"
 android:background="@color/primary_color_app"
 android:padding="30dp"
 android:transitionName="transition_signup"
-tools:context=".common.signup.SignUp1">
+tools:context=".common.auth.SignUp">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -195,7 +195,7 @@ tools:context=".common.signup.SignUp1">
         android:background="@drawable/my_button_bg_black"
         android:elevation="5dp"
         android:onClick="callNextSigupScreen"
-        android:text="@string/next"
+        android:text="@string/next_btn"
         android:textColor="@color/primary_color_app"
         android:transitionName="transition_next_btn" />
 
