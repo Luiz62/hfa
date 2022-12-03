@@ -31,7 +31,7 @@ public class RetailerDashboard extends AppCompatActivity {
         String email = usersDetails.get(SessionManager.KEY_EMAIL);
         String phoneNumber = usersDetails.get(SessionManager.KEY_PHONENUMBER);
         String password = usersDetails.get(SessionManager.KEY_PASSWORD);
-        String username = usersDetails.get(SessionManager.KEY_USERNAME);
+        String cpf = usersDetails.get(SessionManager.KEY_CPF);
         String age = usersDetails.get(SessionManager.KEY_DATE);
         String gender = usersDetails.get(SessionManager.KEY_GENDER);
 
@@ -40,7 +40,7 @@ public class RetailerDashboard extends AppCompatActivity {
                         "Email: " + email + "\n" +
                         "Phone Number: " + phoneNumber + "\n" +
                         "Password: " + password + "\n" +
-                        "Username: " + username + "\n" +
+                        "Cpf: " + cpf + "\n" +
                         "Date of Birth: " + age + "\n" +
                         "Gender: " + gender + "\n"
         );

@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:fontFamily="@font/muli"
+                android:fontFamily="@font/muli_black"
                 android:text="@string/create_account"
                 android:textAllCaps="true"
                 android:textColor="@color/secodary_color_app"
@@ -50,7 +50,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/circle_black_border"
-                android:fontFamily="@font/muli"
+                android:fontFamily="@font/ds_digital_bold"
                 android:gravity="center"
                 android:padding="10dp"
                 android:text="3/3"
@@ -73,8 +73,9 @@
                 android:id="@+id/country_code_picker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/default_border_input"
+                android:background="@drawable/black_border"
                 android:padding="7dp"
+                app:ccp_autoDetectCountry="true"
                 app:ccp_showFlag="true"
                 app:ccp_showFullName="true"
                 app:ccp_showNameCode="true" />
@@ -93,15 +94,12 @@
                 app:endIconTint="@color/secodary_color_app"
                 app:hintTextColor="@color/secodary_color_app"
                 app:startIconDrawable="@drawable/field_phone_number_icon"
-                app:startIconTint="@color/secodary_color_app"
-                app:boxStrokeErrorColor="@color/red"
-                app:errorIconTint="@color/red"
-                app:errorTextColor="@color/red">
+                app:startIconTint="@color/secodary_color_app">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/muli"
+                    android:fontFamily="@font/muli_semibold"
                     android:inputType="phone"
                     android:textColor="@color/secodary_color_app"
                     android:textCursorDrawable="@null" />
@@ -139,6 +137,7 @@
             </RelativeLayout>
 
         </RelativeLayout>
+
     </LinearLayout>
 
 </ScrollView>

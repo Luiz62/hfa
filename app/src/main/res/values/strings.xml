@@ -56,6 +56,12 @@
     <string name="enter_phone_number">Número</string>
     <string name="enter_password">Senha</string>
 
+    <!-- Sing Up -->
+    <string name="select_gender">Seu gênero</string>
+    <string name="gender_male">Masculino</string>
+    <string name="gender_female">Feminino</string>
+    <string name="gender_other">Outro</string>
+    <string name="select_your_age">Sua data de nascimento</string>
 
     <!--   OTP Screen -->
     <string name="otp_code_text">Co\nde</string>

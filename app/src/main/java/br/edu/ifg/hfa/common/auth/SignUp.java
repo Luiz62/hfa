@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ public class SignUp extends AppCompatActivity {
 
     //Variables
     ImageView backBtn;
-    Button next, login;
+    Button next;
     TextView titleText, slideText;
 
     //Get Data Variables
@@ -28,11 +29,13 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup1);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_retailer_sign_up);
 
+        //Hooks for animation
         backBtn = findViewById(R.id.signup_back_button);
         next = findViewById(R.id.signup_next_button);
-        login = findViewById(R.id.signup_login_button);
         titleText = findViewById(R.id.signup_title_text);
         slideText = findViewById(R.id.signup_slide_text);
 
@@ -41,11 +44,13 @@ public class SignUp extends AppCompatActivity {
         email = findViewById(R.id.signup_email);
         cpf = findViewById(R.id.signup_cpf);
         password = findViewById(R.id.signup_password);
+
     }
+
 
     public void callNextSigupScreen(View view) {
 
-        if (!validateFullName() | !validateCPF() | !validateEmail() | !validatePassword()) {
+        if (!validateFullName() | !validateCpf() | !validateEmail() | !validatePassword()) {
             return;
         }
 
@@ -60,17 +65,16 @@ public class SignUp extends AppCompatActivity {
 
         intent.putExtra("fullName", _fullName);
         intent.putExtra("email", _email);
-        intent.putExtra("username", _cpf);
+        intent.putExtra("cpf", _cpf);
         intent.putExtra("password", _password);
 
 
         //Add Shared Animation
-        Pair[] pairs = new Pair[5];
+        Pair[] pairs = new Pair[4];
         pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
         pairs[1] = new Pair<View, String>(next, "transition_next_btn");
-        pairs[2] = new Pair<View, String>(login, "transition_login_btn");
-        pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
-        pairs[4] = new Pair<View, String>(slideText, "transition_slide_text");
+        pairs[2] = new Pair<View, String>(titleText, "transition_title_text");
+        pairs[3] = new Pair<View, String>(slideText, "transition_slide_text");
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
             startActivity(intent, options.toBundle());
@@ -99,9 +103,25 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-    private boolean validateCPF() {
+    private boolean validateCpf() {
         String val = cpf.getEditText().getText().toString().trim();
-        return true;
+        String checkspaces = "\\A\\w{1,20}\\z";
+
+        if (val.isEmpty()) {
+            cpf.setError("Field can not be empty");
+            return false;
+        } else if (val.length() > 11) {
+            cpf.setError("Username is too large!");
+            return false;
+        } else if (!val.matches(checkspaces)) {
+            cpf.setError("No White spaces are allowed!");
+            return false;
+        } else {
+            cpf.setError(null);
+            cpf.setErrorEnabled(false);
+            return true;
+        }
+
     }
 
     private boolean validateEmail() {
@@ -153,6 +173,5 @@ public class SignUp extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }
-
 
 }

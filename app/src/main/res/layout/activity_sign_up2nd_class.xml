@@ -30,7 +30,7 @@
                 android:id="@+id/signup_title_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/muli"
+                android:fontFamily="@font/muli_black"
                 android:text="@string/create_account"
                 android:textAllCaps="true"
                 android:textColor="@color/secodary_color_app"
@@ -44,7 +44,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/muli"
+                android:fontFamily="@font/ds_digital_bold"
                 android:text="2/3"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/secodary_color_app"
@@ -68,8 +68,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/muli"
-                android:text="Sexo"
+                android:text="@string/select_gender"
                 android:textColor="@color/secodary_color_app"
                 android:textSize="18sp" />
 
@@ -85,27 +84,21 @@
                     android:id="@+id/male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/muli"
-                    android:text="Masculino"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:text="@string/gender_male" />
 
                 <RadioButton
                     android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/muli"
-                    android:text="Feminino"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:text="@string/gender_female" />
 
                 <RadioButton
                     android:id="@+id/others"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/muli"
-                    android:text="Outros"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    android:text="@string/gender_other" />
             </RadioGroup>
 
 
@@ -119,8 +112,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/muli"
-                android:text="Data Nascimento"
+                android:text="@string/select_your_age"
                 android:textColor="@color/secodary_color_app"
                 android:textSize="18sp" />
 
@@ -144,7 +136,6 @@
             android:background="@drawable/my_button_bg_black"
             android:elevation="5dp"
             android:onClick="call3rdSigupScreen"
-            android:fontFamily="@font/muli"
             android:text="@string/next_btn"
             android:textColor="@color/primary_color_app"
             android:transitionName="transition_next_btn" />
