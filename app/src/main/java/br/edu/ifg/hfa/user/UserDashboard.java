@@ -40,7 +40,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     RecyclerView featuredRecycler, mostViewedRecycler, categoriesRecycler;
     RecyclerView.Adapter adapter;
     private GradientDrawable gradient1, gradient2, gradient3, gradient4;
-    ImageView menuIcon, loginSignUpBtn;
+    ImageView menuIcon;
     LinearLayout contentView;
 
     //Drawer Menu
@@ -53,12 +53,11 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_user_dashboard);
 
         //Hooks
-        featuredRecycler = findViewById(R.id.featured_recycler);
-        mostViewedRecycler = findViewById(R.id.most_viewed_recycler);
-        categoriesRecycler = findViewById(R.id.categories_recycler);
+//        featuredRecycler = findViewById(R.id.featured_recycler);
+//        mostViewedRecycler = findViewById(R.id.most_viewed_recycler);
+//        categoriesRecycler = findViewById(R.id.categories_recycler);
         menuIcon = findViewById(R.id.menu_icon);
         contentView = findViewById(R.id.content);
-        loginSignUpBtn = findViewById(R.id.login_signup);
 
         //Menu Hooks
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -66,17 +65,17 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
 
         //call navigation drawer
-        naviagtionDrawer();
+        navigationDrawer();
 
 
         //Recycler Views Function Calls
-        featuredRecycler();
-        mostViewedRecycler();
-        categoriesRecycler();
+//        featuredRecycler();
+//        mostViewedRecycler();
+//        categoriesRecycler();
     }
 
     //Navigation Drawer Functions
-    private void naviagtionDrawer() {
+    private void navigationDrawer() {
 
         //Naviagtion Drawer
         navigationView.bringToFront();

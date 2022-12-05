@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".user.UserDashboard"
-    android:background="@color/white"
+    android:background="@color/primary_color_app"
     android:id="@+id/drawer_layout">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/primary_color_app"
         android:theme="@style/navigationTheme"
         android:layout_gravity="start"
         app:menu="@menu/main_menu"/>
@@ -39,23 +39,6 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/menu_icon" />
 
-            <ImageView
-                android:id="@+id/login_signup"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/banner_background"
-                android:elevation="6dp"
-                android:onClick="callRetailerScreens"
-                android:padding="5dp"
-                android:src="@drawable/add_missing_place_icon"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
         </RelativeLayout>
 
         <ScrollView
@@ -67,301 +50,292 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
 
-                    <TextView
-                        android:id="@+id/app_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/brandon_grotesque_black"
-                        android:text="@string/logo_name"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="28sp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/app_name"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:fontFamily="@font/brandon_grotesque_black"-->
+<!--                        android:text="@string/logo_name"-->
+<!--                        android:textColor="@color/secodary_color_app"-->
+<!--                        android:textSize="28sp" />-->
 
+<!--                </RelativeLayout>-->
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_below="@id/app_name"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="40dp"
-                        android:layout_marginBottom="20dp"
-                        android:background="@color/white"
-                        android:elevation="8dp">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:orientation="horizontal">-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="15dp"
-                            android:text="@string/search_text" />
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical">-->
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="15dp"
-                            android:src="@drawable/search_icon" />
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="60dp"-->
+<!--                            android:layout_height="60dp"-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:background="@drawable/card_1"-->
+<!--                            android:elevation="8dp">-->
 
-                    </RelativeLayout>
+<!--                            <ImageView-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_centerInParent="true"-->
+<!--                                android:src="@drawable/ic_baseline_assignment_24" />-->
 
-                </RelativeLayout>
+<!--                        </RelativeLayout>-->
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            android:text="@string/receitas"-->
+<!--                            android:textAlignment="center" />-->
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+<!--                    </LinearLayout>-->
 
-                        <RelativeLayout
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_margin="10dp"
-                            android:background="@drawable/card_1"
-                            android:elevation="8dp">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical">-->
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/restaurant_icon" />
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="60dp"-->
+<!--                            android:layout_height="60dp"-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:background="@drawable/card_2"-->
+<!--                            android:elevation="8dp">-->
 
-                        </RelativeLayout>
+<!--                            <ImageView-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_centerInParent="true"-->
+<!--                                android:src="@drawable/ic_baseline_history_24" />-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="@string/restaurants"
-                            android:textAlignment="center" />
+<!--                        </RelativeLayout>-->
 
-                    </LinearLayout>
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            android:text="@string/historico"-->
+<!--                            android:textAlignment="center" />-->
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+<!--                    </LinearLayout>-->
 
-                        <RelativeLayout
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_margin="10dp"
-                            android:background="@drawable/card_2"
-                            android:elevation="8dp">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical">-->
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/bank_icon" />
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="60dp"-->
+<!--                            android:layout_height="60dp"-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:background="@drawable/card_3"-->
+<!--                            android:elevation="8dp">-->
 
-                        </RelativeLayout>
+<!--                            <ImageView-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_centerInParent="true"-->
+<!--                                android:src="@drawable/ic_baseline_medical_services_24" />-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="@string/hotels"
-                            android:textAlignment="center" />
+<!--                        </RelativeLayout>-->
 
-                    </LinearLayout>
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            android:text="@string/consultas"-->
+<!--                            android:textAlignment="center" />-->
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+<!--                    </LinearLayout>-->
 
-                        <RelativeLayout
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_margin="10dp"
-                            android:background="@drawable/card_3"
-                            android:elevation="8dp">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical">-->
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/school_icon" />
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="60dp"-->
+<!--                            android:layout_height="60dp"-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:background="@drawable/card_4"-->
+<!--                            android:elevation="8dp">-->
 
-                        </RelativeLayout>
+<!--                            <ImageView-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_centerInParent="true"-->
+<!--                                android:src="@drawable/shop_icon" />-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="Education"
-                            android:textAlignment="center" />
+<!--                        </RelativeLayout>-->
 
-                    </LinearLayout>
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            android:text="@string/shops"-->
+<!--                            android:textAlignment="center" />-->
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+<!--                    </LinearLayout>-->
 
-                        <RelativeLayout
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:layout_margin="10dp"
-                            android:background="@drawable/card_4"
-                            android:elevation="8dp">
+<!--                </LinearLayout>-->
 
-                            <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/shop_icon" />
-
-                        </RelativeLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="@string/shops"
-                            android:textAlignment="center" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/lightWhite">
-
-                    <LinearLayout
-                        android:id="@+id/featured_background"
-                        android:layout_width="170dp"
-                        android:layout_height="300dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/banner_background_light"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="50dp"
-                            android:fontFamily="@font/brandon_grotesque_black"
-                            android:lineHeight="24sp"
-                            android:text="@string/featured_locations"
-                            android:textAllCaps="true"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="25sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="@string/featured_locations_description" />
-
-                    </LinearLayout>
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/featured_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/featured_background"
-                        android:background="@color/home_background" />
-
-
-                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_weight="6"
                     android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp">
-
-                    <RelativeLayout
+                    android:weightSum="2"
+                    android:padding="16dp"
+                    >
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:padding="16dp"
+                        >
+                        <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:fontFamily="@font/brandon_grotesque_black"
-                            android:text="@string/most_viewed_locations"
-                            android:textAllCaps="true"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="20sp" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp"
+                            android:layout_margin="12dp"
+                            android:background="#fff"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                >
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_baseline_assignment_24"
+                                    />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Manage your money"
+                                    android:textAlignment="center"
+                                    />
+                            </LinearLayout>
 
-                        <TextView
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="15dp"
-                            android:text="@string/view_all" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp"
+                            android:layout_margin="12dp"
+                            android:background="#fff"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                >
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_baseline_medical_services_24"
+                                    />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Contact your bank"
+                                    android:textAlignment="center"
+                                    />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
 
-                    </RelativeLayout>
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/most_viewed_recycler"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:padding="16dp"
+                        >
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
+                        <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:fontFamily="@font/brandon_grotesque_black"
-                            android:text="@string/categories"
-                            android:textAllCaps="true"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="20sp" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp"
+                            android:layout_margin="12dp"
+                            android:background="#fff"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                >
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_baseline_history_24"
+                                    />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="See your Costomers"
+                                    android:textAlignment="center"
+                                    />
+                            </LinearLayout>
 
-                        <TextView
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:text="@string/view_all" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            app:cardElevation="2dp"
+                            app:cardCornerRadius="8dp"
+                            android:layout_margin="12dp"
+                            android:background="#fff"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                >
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/shop_icon"
+                                    />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="important contact"
+                                    android:textAlignment="center"
+                                    />
+                            </LinearLayout>
 
+                        </androidx.cardview.widget.CardView>
 
-                    </RelativeLayout>
+                    </LinearLayout>
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/categories_recycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 

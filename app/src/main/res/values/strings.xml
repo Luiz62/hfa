@@ -85,12 +85,11 @@
     <!--   TODO:Strings for Dashboard    -->
 
     <!--  Categories  -->
-    <string name="hotels">Hotels</string>
-    <string name="restaurants">Restaurants</string>
-    <string name="shops">Shops</string>
-    <string name="banks">Banks</string>
+    <string name="receitas">Receitas Disponiveis</string>
+    <string name="shops">Farmácias</string>
+    <string name="historico">Histórico</string>
     <string name="airports">Airports</string>
-    <string name="education">Education</string>
+    <string name="consultas">Consultas</string>
     <string name="hospitals">Hospitals</string>
 
     <!--  Titles and Descriptions  -->

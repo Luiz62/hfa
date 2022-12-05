@@ -26,10 +26,6 @@
 
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_login"
-                    android:title="@string/login"
-                    android:icon="@drawable/menu_login_icon"/>
-                <item
                     android:id="@+id/nav_profile"
                     android:title="@string/profile"
                     android:icon="@drawable/menu_profile_icon"/>
@@ -47,19 +43,19 @@
 
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_restaurants"
-                    android:title="@string/restaurants"
-                    android:icon="@drawable/restaurant_icon"/>
+                    android:id="@+id/nav_receitas"
+                    android:title="@string/receitas"
+                    android:icon="@drawable/ic_baseline_assignment_24"/>
                 <item
-                    android:id="@+id/nav_bank"
-                    android:title="@string/banks"
-                    android:icon="@drawable/bank_icon"/>
+                    android:id="@+id/nav_historico"
+                    android:title="@string/historico"
+                    android:icon="@drawable/ic_baseline_history_24"/>
                 <item
-                    android:id="@+id/nav_education"
-                    android:title="@string/education"
-                    android:icon="@drawable/school_icon"/>
+                    android:id="@+id/nav_consultas"
+                    android:title="@string/consultas"
+                    android:icon="@drawable/ic_baseline_medical_services_24"/>
                 <item
-                    android:id="@+id/nav_shop"
+                    android:id="@+id/nav_farmacia"
                     android:title="@string/shops"
                     android:icon="@drawable/shop_icon"/>
             </group>
