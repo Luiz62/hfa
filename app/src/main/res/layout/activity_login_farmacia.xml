@@ -7,7 +7,7 @@
     android:background="@color/primary_color_app"
     android:padding="30dp"
     android:transitionName="transition_login"
-    tools:context=".common.auth.paciente.Login">
+    tools:context=".common.auth.farmacia.LoginFarmacia">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/login_back_button"
+            android:id="@+id/login_back_button_farmacia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -38,35 +38,23 @@
             android:layout_marginTop="80dp">
 
 
-            <com.hbb20.CountryCodePicker
-                android:id="@+id/login_country_code_picker"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/black_border"
-                android:padding="7dp"
-                app:ccp_autoDetectCountry="true"
-                app:ccp_showFlag="true"
-                app:ccp_showFullName="true"
-                app:ccp_showNameCode="true" />
-
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/login_phone_number"
+                android:id="@+id/login_email_farmacia"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/login_country_code_picker"
-                android:hint="@string/enter_phone_number"
+                android:hint="@string/enter_email"
                 android:textColorHint="@color/secodary_color_app"
                 app:boxStrokeColor="@color/secodary_color_app"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/secodary_color_app"
                 app:hintTextColor="@color/secodary_color_app"
-                app:startIconDrawable="@drawable/field_phone_number_icon"
+                app:startIconDrawable="@drawable/field_email_icon_black"
                 app:startIconTint="@color/secodary_color_app">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_phone_number_editText"
+                    android:id="@+id/login_email_number_editText_farmacia"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/muli_semibold"
@@ -77,11 +65,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/login_password"
+                android:id="@+id/login_password_farmacia"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/login_phone_number"
+                android:layout_below="@id/login_email_farmacia"
                 android:hint="@string/enter_password"
                 android:textColorHint="@color/secodary_color_app"
                 app:boxStrokeColor="@color/secodary_color_app"
@@ -93,7 +81,7 @@
                 app:startIconTint="@color/secodary_color_app">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_password_editText"
+                    android:id="@+id/login_password_editText_farmacia"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/muli"
@@ -103,14 +91,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <RelativeLayout
-                android:id="@+id/forget_password_block"
+                android:id="@+id/forget_password_block_farmacia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/login_password"
+                android:layout_below="@id/login_password_farmacia"
                 android:layout_marginTop="10dp">
 
                 <CheckBox
-                    android:id="@+id/remember_me"
+                    android:id="@+id/remember_me_farmacia"
                     style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -133,10 +121,10 @@
 
 
             <Button
-                android:id="@+id/letTheUserLogIn"
+                android:id="@+id/letTheUserLogInFarmacia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/forget_password_block"
+                android:layout_below="@id/forget_password_block_farmacia"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/my_button_bg"
                 android:onClick="letTheUserLoggedIn"
@@ -146,7 +134,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/letTheUserLogIn"
+                android:layout_below="@id/letTheUserLogInFarmacia"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:background="#00000000"
@@ -155,7 +143,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/login_progress_bar"
+                android:id="@+id/login_progress_bar_farmacia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"

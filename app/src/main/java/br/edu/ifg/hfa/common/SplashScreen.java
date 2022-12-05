@@ -13,8 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.common.auth.Login;
-import br.edu.ifg.hfa.user.UserDashboard;
+import br.edu.ifg.hfa.common.auth.paciente.RetailerStartUpScreen;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -60,12 +59,12 @@ public class SplashScreen extends AppCompatActivity {
                     editor.putBoolean("firstTime", false);
                     editor.commit();
 
-                    Intent intent = new Intent(getApplicationContext(), OnBoarding.class);
+                    Intent intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
                     startActivity(intent);
                     finish();
 
                 } else {
-                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                    Intent intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
                     startActivity(intent);
                     finish();
                 }

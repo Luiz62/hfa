@@ -19,7 +19,9 @@ public class SessionManager {
     //User session variables
     private static final String IS_LOGIN = "IsLoggedIn";
     public static final String KEY_FULLNAME = "fullName";
+    public static final String KEY_NAME = "name";
     public static final String KEY_CPF = "cpf";
+    public static final String KEY_CNPJ = "cnpj";
     public static final String KEY_EMAIL = "email";
     public static final String KEY_PHONENUMBER = "phoneNumber";
     public static final String KEY_PASSWORD = "password";

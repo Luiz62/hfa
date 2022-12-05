@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.user;
+package br.edu.ifg.hfa.user.paciente;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,9 +27,10 @@ import br.edu.ifg.hfa.adapter.home.FeaturedAdpater;
 import br.edu.ifg.hfa.adapter.home.FeaturedHelperClass;
 import br.edu.ifg.hfa.adapter.home.MostViewedAdapter;
 import br.edu.ifg.hfa.adapter.home.MostViewedHelperClass;
-import br.edu.ifg.hfa.common.auth.RetailerStartUpScreen;
-import br.edu.ifg.hfa.common.dashboard.RetailerDashboard;
+import br.edu.ifg.hfa.common.auth.paciente.RetailerStartUpScreen;
+import br.edu.ifg.hfa.common.dashboard.paciente.RetailerDashboard;
 import br.edu.ifg.hfa.db.SessionManager;
+import br.edu.ifg.hfa.user.AllCategories;
 
 public class UserDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

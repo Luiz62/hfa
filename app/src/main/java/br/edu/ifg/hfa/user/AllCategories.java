@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import br.edu.ifg.hfa.R;
+import br.edu.ifg.hfa.user.paciente.UserDashboard;
 
 public class AllCategories extends AppCompatActivity {
 

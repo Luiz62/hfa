@@ -44,10 +44,8 @@
     <string name="expand_all">Expandir</string>
 
     <!--  General Strings  -->
-    <string name="retailer_heading">Grow\nYour Business</string>
-    <string name="retailer_tag_line">We will help you to grow your business using online services!</string>
+    <string name="retailer_heading">Deseja fazer \nlogin como?</string>
     <string name="create_account">Crie sua\nConta</string>
-    <string name="how_we_work">How we work?</string>
 
     <!--  Field Strings  -->
     <string name="enter_full_name">Nome Completo</string>
@@ -84,13 +82,13 @@
 
     <!--   TODO:Strings for Dashboard    -->
 
-    <!--  Categories  -->
-    <string name="receitas">Receitas Disponiveis</string>
-    <string name="shops">Farmácias</string>
+    <!--  Dashboard menus  -->
+    <string name="receitas">Receitas</string>
+    <string name="farmacias">Farmácias</string>
     <string name="historico">Histórico</string>
-    <string name="airports">Airports</string>
     <string name="consultas">Consultas</string>
-    <string name="hospitals">Hospitals</string>
+    <string name="exames">Exames</string>
+    <string name="alarmes">Alarmes</string>
 
     <!--  Titles and Descriptions  -->
     <string name="featured_locations">All Featured Locations</string>

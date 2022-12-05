@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.adapter.slide.SliderAdapter;
-import br.edu.ifg.hfa.user.UserDashboard;
+import br.edu.ifg.hfa.user.paciente.UserDashboard;
 
 public class OnBoarding extends AppCompatActivity {
 

@@ -56,7 +56,7 @@
                     android:icon="@drawable/ic_baseline_medical_services_24"/>
                 <item
                     android:id="@+id/nav_farmacia"
-                    android:title="@string/shops"
+                    android:title="@string/farmacias"
                     android:icon="@drawable/shop_icon"/>
             </group>
 

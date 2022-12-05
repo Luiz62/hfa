@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.auth;
+package br.edu.ifg.hfa.common.auth.paciente;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,24 +13,19 @@ import android.widget.Toast;
 import com.chaos.view.PinView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.NotNull;
 
-import java.util.concurrent.TimeUnit;
-
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.common.dashboard.RetailerDashboard;
+import br.edu.ifg.hfa.common.dashboard.paciente.RetailerDashboard;
 import br.edu.ifg.hfa.db.SessionManager;
 import br.edu.ifg.hfa.db.UserHelperClass;
-import br.edu.ifg.hfa.user.UserDashboard;
+import br.edu.ifg.hfa.user.paciente.UserDashboard;
 
 public class VerifyOTP extends AppCompatActivity {
 

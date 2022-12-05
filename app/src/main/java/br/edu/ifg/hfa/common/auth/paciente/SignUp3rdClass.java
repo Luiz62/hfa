@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.auth;
+package br.edu.ifg.hfa.common.auth.paciente;
 
 import android.app.ActivityOptions;
 import android.content.DialogInterface;

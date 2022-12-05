@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.dashboard;
+package br.edu.ifg.hfa.common.dashboard.paciente;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.common.auth.RetailerStartUpScreen;
+import br.edu.ifg.hfa.common.auth.paciente.RetailerStartUpScreen;
 import br.edu.ifg.hfa.db.SessionManager;
 
 public class RetailerDashboard extends AppCompatActivity {

@@ -7,7 +7,7 @@
     android:background="@color/primary_color_app"
     android:padding="30dp"
     android:transitionName="transition_signup"
-    tools:context=".common.auth.SignUp">
+    tools:context=".common.auth.paciente.SignUp">
 
     <LinearLayout
         android:layout_width="match_parent"
