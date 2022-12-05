@@ -138,10 +138,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/forget_password_block"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/my_button_bg_black"
+                android:background="@drawable/my_button_bg"
                 android:onClick="letTheUserLoggedIn"
                 android:text="@string/login"
-                android:textColor="@color/primary_color_app" />
+                android:textColor="@color/secodary_color_app" />
 
             <Button
                 android:layout_width="wrap_content"

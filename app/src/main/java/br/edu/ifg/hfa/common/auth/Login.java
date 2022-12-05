@@ -29,6 +29,7 @@ import java.util.HashMap;
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.dashboard.RetailerDashboard;
 import br.edu.ifg.hfa.db.SessionManager;
+import br.edu.ifg.hfa.user.UserDashboard;
 import br.edu.ifg.hfa.utils.CheckInternet;
 
 public class Login extends AppCompatActivity {
@@ -96,7 +97,7 @@ public class Login extends AppCompatActivity {
         if (_phoneNumber.charAt(0) == '0') {
             _phoneNumber = _phoneNumber.substring(1);
         } //remove 0 at the start if entered by the user
-        final String _completePhoneNumber = "+" + countryCodePicker.getFullNumber() + _phoneNumber;
+        final String _completePhoneNumber = "+" + countryCodePicker.getSelectedCountryCode() + _phoneNumber;
 
 
         //Check Remember Me Button to create it's session
@@ -122,7 +123,7 @@ public class Login extends AppCompatActivity {
 
                         //Get users data from firebase database
                         String _fullname = dataSnapshot.child(_completePhoneNumber).child("fullName").getValue(String.class);
-                        String _username = dataSnapshot.child(_completePhoneNumber).child("username").getValue(String.class);
+                        String _cpf = dataSnapshot.child(_completePhoneNumber).child("cpf").getValue(String.class);
                         String _email = dataSnapshot.child(_completePhoneNumber).child("email").getValue(String.class);
                         String _phoneNo = dataSnapshot.child(_completePhoneNumber).child("phoneNo").getValue(String.class);
                         String _password = dataSnapshot.child(_completePhoneNumber).child("password").getValue(String.class);
@@ -131,9 +132,9 @@ public class Login extends AppCompatActivity {
 
                         //Create a Session
                         SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_USERSESSION);
-                        sessionManager.createLoginSession(_fullname, _username, _email, _phoneNo, _password, _dateOfBirth, _gender);
+                        sessionManager.createLoginSession(_fullname, _cpf, _email, _phoneNo, _password, _dateOfBirth, _gender);
 
-                        startActivity(new Intent(getApplicationContext(), RetailerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), UserDashboard.class));
                         finish();
                         progressbar.setVisibility(View.GONE);
 

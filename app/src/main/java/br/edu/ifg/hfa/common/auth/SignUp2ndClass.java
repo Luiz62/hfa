@@ -67,7 +67,7 @@ public class SignUp2ndClass extends AppCompatActivity {
         //All fields data passes from previous signup screen
         String _fullName = getIntent().getStringExtra("fullName");
         String _email = getIntent().getStringExtra("email");
-        String _username = getIntent().getStringExtra("username");
+        String _cpf = getIntent().getStringExtra("cpf");
         String _password = getIntent().getStringExtra("password");
 
 
@@ -76,7 +76,7 @@ public class SignUp2ndClass extends AppCompatActivity {
         //Pass all fields to the next activity
         intent.putExtra("fullName", _fullName);
         intent.putExtra("email", _email);
-        intent.putExtra("username", _username);
+        intent.putExtra("cpf", _cpf);
         intent.putExtra("password", _password);
         intent.putExtra("date", _date);
         intent.putExtra("gender", _gender);

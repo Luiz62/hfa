@@ -105,7 +105,7 @@ public class SignUp extends AppCompatActivity {
 
     private boolean validateCpf() {
         String val = cpf.getEditText().getText().toString().trim();
-        String checkspaces = "\\A\\w{1,20}\\z";
+//        String checkspaces = "\\A\\w{1,20}\\z";
 
         if (val.isEmpty()) {
             cpf.setError("Field can not be empty");
@@ -113,9 +113,9 @@ public class SignUp extends AppCompatActivity {
         } else if (val.length() > 11) {
             cpf.setError("Username is too large!");
             return false;
-        } else if (!val.matches(checkspaces)) {
-            cpf.setError("No White spaces are allowed!");
-            return false;
+//        } else if (!val.matches(checkspaces)) {
+//            cpf.setError("No White spaces are allowed!");
+//            return false;
         } else {
             cpf.setError(null);
             cpf.setErrorEnabled(false);

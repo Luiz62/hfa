@@ -33,7 +33,7 @@
 
     <!--     AUTH     -->
     <string name="login">Entrar</string>
-    <string name="sign_up">Cria conta</string>
+    <string name="sign_up">Criar conta</string>
     <string name="profile">Perfil</string>
     <string name="logout">Sair</string>
     <string name="share">Compartilhar</string>
@@ -66,7 +66,7 @@
     <!--   OTP Screen -->
     <string name="otp_code_text">Co\nde</string>
     <string name="otp_verification_text">Verificação</string>
-    <string name="otp_description_text">Enter one time password sent on\n+40028922</string>
+    <string name="otp_description_text">Informe o código enviado em\n</string>
 
 
     <!--   Reset Password -->

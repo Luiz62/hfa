@@ -111,7 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/muli_semibold"
-                    android:inputType="text"
+                    android:inputType="numberDecimal"
                     android:textColor="@color/secodary_color_app"
                     android:textCursorDrawable="@null" />
 
@@ -177,11 +177,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@drawable/my_button_bg_black"
+            android:background="@drawable/my_button_bg"
             android:elevation="5dp"
             android:onClick="callNextSigupScreen"
             android:text="@string/next_btn"
-            android:textColor="@color/primary_color_app"
+            android:textColor="@color/secodary_color_app"
             android:transitionName="transition_next_btn" />
     </LinearLayout>
 

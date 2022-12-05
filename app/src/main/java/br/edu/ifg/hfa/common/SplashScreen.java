@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.edu.ifg.hfa.R;
+import br.edu.ifg.hfa.common.auth.Login;
 import br.edu.ifg.hfa.user.UserDashboard;
 
 public class SplashScreen extends AppCompatActivity {
@@ -64,7 +65,7 @@ public class SplashScreen extends AppCompatActivity {
                     finish();
 
                 } else {
-                    Intent intent = new Intent(getApplicationContext(), UserDashboard.class);
+                    Intent intent = new Intent(getApplicationContext(), Login.class);
                     startActivity(intent);
                     finish();
                 }
