@@ -29,6 +29,7 @@ import br.edu.ifg.hfa.common.auth.paciente.ForgetPassword;
 import br.edu.ifg.hfa.common.auth.paciente.RetailerStartUpScreen;
 import br.edu.ifg.hfa.common.auth.paciente.SignUp;
 import br.edu.ifg.hfa.db.SessionManager;
+import br.edu.ifg.hfa.user.farmacia.FarmaciaDashboard;
 import br.edu.ifg.hfa.user.paciente.UserDashboard;
 import br.edu.ifg.hfa.utils.CheckInternet;
 
@@ -122,20 +123,19 @@ public class LoginFarmacia extends AppCompatActivity {
 
                         //Get users data from firebase database
                         String _name = dataSnapshot.child(_email)
-                                .child("fullName").getValue(String.class);
+                                .child("name").getValue(String.class);
                         String _cnpj = dataSnapshot.child(_email)
                                 .child("cpf").getValue(String.class);
-                        String _phoneNo = dataSnapshot.child(_email)
-                                .child("phoneNo").getValue(String.class);
                         String _password = dataSnapshot.child(_email)
                                 .child("password").getValue(String.class);
 
                         //Create a Session
                         SessionManager sessionManager = new SessionManager(LoginFarmacia.this,
                                 SessionManager.SESSION_USERSESSION);
+                        sessionManager.createLoginSession(_name, _cnpj, _email, _password);
 
                         startActivity(new Intent(getApplicationContext(),
-                                UserDashboard.class));
+                                FarmaciaDashboard.class));
                         finish();
                         progressbar.setVisibility(View.GONE);
 
@@ -234,7 +234,7 @@ public class LoginFarmacia extends AppCompatActivity {
 
 
     public void callSignUpFromLogin(View view) {
-        startActivity(new Intent(getApplicationContext(), SignUp.class));
-        finish();
+//        startActivity(new Intent(getApplicationContext(), SignUp.class));
+//        finish();
     }
 }

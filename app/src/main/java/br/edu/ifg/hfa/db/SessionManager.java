@@ -60,6 +60,18 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void createLoginSession(String name, String cnpj, String email, String password) {
+
+        editor.putBoolean(IS_LOGIN, true);
+
+        editor.putString(KEY_NAME, name);
+        editor.putString(KEY_CPF, cnpj);
+        editor.putString(KEY_EMAIL, email);
+        editor.putString(KEY_PASSWORD, password);
+
+        editor.commit();
+    }
+
     public HashMap<String, String> getUsersDetailFromSession() {
         HashMap<String, String> userData = new HashMap<String, String>();
 
