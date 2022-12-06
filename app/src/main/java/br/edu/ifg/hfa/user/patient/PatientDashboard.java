@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.user.paciente;
+package br.edu.ifg.hfa.user.patient;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,12 +27,12 @@ import br.edu.ifg.hfa.adapter.home.FeaturedAdpater;
 import br.edu.ifg.hfa.adapter.home.FeaturedHelperClass;
 import br.edu.ifg.hfa.adapter.home.MostViewedAdapter;
 import br.edu.ifg.hfa.adapter.home.MostViewedHelperClass;
-import br.edu.ifg.hfa.common.auth.paciente.RetailerStartUpScreen;
-import br.edu.ifg.hfa.common.dashboard.paciente.RetailerDashboard;
+import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
+import br.edu.ifg.hfa.common.dashboard.patient.RetailerDashboard;
 import br.edu.ifg.hfa.db.SessionManager;
 import br.edu.ifg.hfa.user.AllCategories;
 
-public class UserDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class PatientDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     //Variables
@@ -51,7 +51,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_dashboard);
+        setContentView(R.layout.activity_patient_dashboard);
 
         //Hooks
 //        featuredRecycler = findViewById(R.id.featured_recycler);
@@ -196,7 +196,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
     //Normal Functions
     public void callRetailerScreens(View view) {
-        SessionManager sessionManager = new SessionManager(UserDashboard.this, SessionManager.SESSION_USERSESSION);
+        SessionManager sessionManager = new SessionManager(PatientDashboard.this, SessionManager.SESSION_USERSESSION);
         if (sessionManager.checkLogin())
             startActivity(new Intent(getApplicationContext(), RetailerDashboard.class));
         else

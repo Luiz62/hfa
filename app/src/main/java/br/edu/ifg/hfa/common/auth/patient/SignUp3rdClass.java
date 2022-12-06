@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.auth.paciente;
+package br.edu.ifg.hfa.common.auth.patient;
 
 import android.app.ActivityOptions;
 import android.content.DialogInterface;
@@ -36,7 +36,6 @@ import br.edu.ifg.hfa.utils.CheckInternet;
 
 public class SignUp3rdClass extends AppCompatActivity {
 
-    //Variables
     ScrollView scrollView;
     TextInputLayout phoneNumber;
     CountryCodePicker countryCodePicker;
@@ -53,7 +52,6 @@ public class SignUp3rdClass extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up3rd_class);
 
         mAuth = FirebaseAuth.getInstance();
-        //Hooks
         scrollView = findViewById(R.id.signup_3rd_screen_scroll_view);
         countryCodePicker = (CountryCodePicker) findViewById(R.id.country_code_picker);
         phoneNumber = findViewById(R.id.signup_phone_number);
@@ -77,7 +75,7 @@ public class SignUp3rdClass extends AppCompatActivity {
 
 
         //Get all values passed from previous screens using Intent
-        final String _fullName = getIntent().getStringExtra("fullName");
+        final String _name = getIntent().getStringExtra("name");
         final String _email = getIntent().getStringExtra("email");
         final String _cpf = getIntent().getStringExtra("cpf");
         final String _password = getIntent().getStringExtra("password");
@@ -112,7 +110,7 @@ public class SignUp3rdClass extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
 
                     //Pass all fields to the next activity
-                    intent.putExtra("fullName", _fullName);
+                    intent.putExtra("name", _name);
                     intent.putExtra("email", _email);
                     intent.putExtra("cpf", _cpf);
                     intent.putExtra("password", _password);
@@ -157,10 +155,9 @@ public class SignUp3rdClass extends AppCompatActivity {
                 Toast.makeText(SignUp3rdClass.this, "OTP is successfully send.",
                         Toast.LENGTH_SHORT).show();
                 intent.putExtra("codeBySystem", verificationId);
-                //Add Transition
                 Pair[] pairs = new Pair[1];
                 pairs[0] = new Pair<View, String>(scrollView, "transition_OTP_screen");
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp3rdClass.this, pairs);
                     startActivity(intent, options.toBundle());
                 } else {

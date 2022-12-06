@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.auth.paciente;
+package br.edu.ifg.hfa.common.auth.patient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +24,7 @@ public class SignUp extends AppCompatActivity {
     TextView titleText, slideText;
 
     //Get Data Variables
-    TextInputLayout fullName, cpf, email, password;
+    TextInputLayout name, cpf, email, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class SignUp extends AppCompatActivity {
         slideText = findViewById(R.id.signup_slide_text);
 
         //Hooks for getting data
-        fullName = findViewById(R.id.signup_fullname);
+        name = findViewById(R.id.signup_name);
         email = findViewById(R.id.signup_email);
         cpf = findViewById(R.id.signup_cpf);
         password = findViewById(R.id.signup_password);
@@ -50,12 +50,12 @@ public class SignUp extends AppCompatActivity {
 
     public void callNextSigupScreen(View view) {
 
-        if (!validateFullName() | !validateCpf() | !validateEmail() | !validatePassword()) {
+        if (!validateName() | !validateCpf() | !validateEmail() | !validatePassword()) {
             return;
         }
 
         //Get data
-        String _fullName = fullName.getEditText().getText().toString().trim();
+        String _name = name.getEditText().getText().toString().trim();
         String _email = email.getEditText().getText().toString().trim();
         String _cpf = cpf.getEditText().getText().toString().trim();
         String _password = password.getEditText().getText().toString().trim();
@@ -63,7 +63,7 @@ public class SignUp extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(), SignUp2ndClass.class);
 
-        intent.putExtra("fullName", _fullName);
+        intent.putExtra("name", _name);
         intent.putExtra("email", _email);
         intent.putExtra("cpf", _cpf);
         intent.putExtra("password", _password);
@@ -89,15 +89,15 @@ public class SignUp extends AppCompatActivity {
     Validation Functions
      */
 
-    private boolean validateFullName() {
-        String val = fullName.getEditText().getText().toString().trim();
+    private boolean validateName() {
+        String val = name.getEditText().getText().toString().trim();
 
         if (val.isEmpty()) {
-            fullName.setError("Field can not be empty");
+            name.setError("Field can not be empty");
             return false;
         } else {
-            fullName.setError(null);
-            fullName.setErrorEnabled(false);
+            name.setError(null);
+            name.setErrorEnabled(false);
             return true;
         }
 
@@ -170,7 +170,7 @@ public class SignUp extends AppCompatActivity {
 
 
     public void callLoginFromSignUp(View view) {
-        startActivity(new Intent(getApplicationContext(), Login.class));
+        startActivity(new Intent(getApplicationContext(), LoginPatient.class));
         finish();
     }
 

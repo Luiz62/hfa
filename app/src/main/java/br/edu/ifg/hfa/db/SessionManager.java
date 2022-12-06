@@ -45,11 +45,12 @@ public class SessionManager {
     Login Session
      */
 
-    public void createLoginSession(String fullName, String cpf, String email, String phoneNo, String password, String age, String gender) {
+    public void createLoginSession(String name, String cpf, String email, String phoneNo,
+                                   String password, String age, String gender) {
 
         editor.putBoolean(IS_LOGIN, true);
 
-        editor.putString(KEY_FULLNAME, fullName);
+        editor.putString(KEY_NAME, name);
         editor.putString(KEY_CPF, cpf);
         editor.putString(KEY_EMAIL, email);
         editor.putString(KEY_PHONENUMBER, phoneNo);
@@ -60,14 +61,12 @@ public class SessionManager {
         editor.commit();
     }
 
-    public void createLoginSession(String name, String cnpj, String email, String password) {
-
+    public void createLoginSession(String name, String cnpj, String email) {
         editor.putBoolean(IS_LOGIN, true);
 
         editor.putString(KEY_NAME, name);
-        editor.putString(KEY_CPF, cnpj);
+        editor.putString(KEY_CNPJ, cnpj);
         editor.putString(KEY_EMAIL, email);
-        editor.putString(KEY_PASSWORD, password);
 
         editor.commit();
     }
@@ -75,7 +74,7 @@ public class SessionManager {
     public HashMap<String, String> getUsersDetailFromSession() {
         HashMap<String, String> userData = new HashMap<String, String>();
 
-        userData.put(KEY_FULLNAME, usersSession.getString(KEY_FULLNAME, null));
+        userData.put(KEY_NAME, usersSession.getString(KEY_NAME, null));
         userData.put(KEY_CPF, usersSession.getString(KEY_CPF, null));
         userData.put(KEY_EMAIL, usersSession.getString(KEY_EMAIL, null));
         userData.put(KEY_PHONENUMBER, usersSession.getString(KEY_PHONENUMBER, null));

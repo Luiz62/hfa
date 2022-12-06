@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".user.paciente.UserDashboard"
+    tools:context=".user.patient.PatientDashboard"
     android:background="@color/primary_color_app"
     android:id="@+id/drawer_layout">
 
@@ -227,12 +227,13 @@
                                     android:layout_height="wrap_content"
                                     android:src="@drawable/ic_baseline_assignment_24"
                                     />
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:padding="5dp"
                                     android:text="@string/receitas"
-                                    android:textAlignment="center"
-                                    />
+                                    android:textAlignment="center" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
@@ -257,12 +258,13 @@
                                     android:layout_height="wrap_content"
                                     android:src="@drawable/ic_baseline_medical_services_24"
                                     />
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:padding="5dp"
                                     android:text="@string/consultas"
-                                    android:textAlignment="center"
-                                    />
+                                    android:textAlignment="center" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
@@ -300,6 +302,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:padding="5dp"
                                     android:text="@string/historico"
                                     android:textAlignment="center" />
                             </LinearLayout>
@@ -330,6 +333,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:padding="5dp"
                                     android:text="@string/farmacias"
                                     android:textAlignment="center" />
                             </LinearLayout>
@@ -365,12 +369,13 @@
                                     android:layout_height="wrap_content"
                                     android:src="@drawable/ic_baseline_medical_information_24"
                                     />
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:padding="5dp"
                                     android:text="@string/exames"
-                                    android:textAlignment="center"
-                                    />
+                                    android:textAlignment="center" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
@@ -395,12 +400,13 @@
                                     android:layout_height="wrap_content"
                                     android:src="@drawable/ic_baseline_alarm_24"
                                     />
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:padding="5dp"
                                     android:text="@string/alarmes"
-                                    android:textAlignment="center"
-                                    />
+                                    android:textAlignment="center" />
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>

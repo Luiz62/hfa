@@ -7,7 +7,7 @@
     android:background="@color/primary_color_app"
     android:padding="30dp"
     android:transitionName="transition_login"
-    tools:context=".common.auth.paciente.Login">
+    tools:context=".common.auth.patient.LoginPatient">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/login_country_code_picker"
-                android:hint="@string/enter_phone_number"
+                android:hint="@string/enter_phone_number_patient"
                 android:textColorHint="@color/secodary_color_app"
                 app:boxStrokeColor="@color/secodary_color_app"
                 app:boxStrokeWidthFocused="2dp"
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/login_phone_number"
-                android:hint="@string/enter_password"
+                android:hint="@string/enter_password_patient"
                 android:textColorHint="@color/secodary_color_app"
                 app:boxStrokeColor="@color/secodary_color_app"
                 app:boxStrokeWidthFocused="2dp"

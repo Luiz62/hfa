@@ -16,56 +16,63 @@
         android:theme="@style/Theme.HFA"
         tools:targetApi="31">
         <activity
-            android:name=".user.farmacia.FarmaciaDashboard"
+            android:name=".common.auth.pharmacy.SingUpPharmacy"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.dashboard.farmacia.RetailerDashboardFarmacia"
+            android:name=".user.pharmacy.PharmacyDashboard"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.farmacia.LoginFarmacia"
+            android:name=".common.dashboard.pharmacy.RetailerDashboardFarmacia"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.MakeSelection"
+            android:name=".common.auth.pharmacy.LoginPharmacy"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.SetNewPassword"
+            android:name=".common.auth.patient.MakeSelection"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.VerifyOTP"
+            android:name=".common.auth.patient.SetNewPassword"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.ForgetPasswordSuccessMessage"
+            android:name=".common.auth.patient.VerifyOTP"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.ForgetPassword"
+            android:name=".common.auth.patient.ForgetPasswordSuccessMessage"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".common.auth.patient.ForgetPassword"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -79,7 +86,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.RetailerStartUpScreen"
+            android:name=".common.auth.patient.RetailerStartUpScreen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -93,42 +100,42 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".user.paciente.UserDashboard"
+            android:name=".user.patient.PatientDashboard"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.dashboard.paciente.RetailerDashboard"
+            android:name=".common.dashboard.patient.RetailerDashboard"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.SignUp3rdClass"
+            android:name=".common.auth.patient.SignUp3rdClass"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.SignUp"
+            android:name=".common.auth.patient.SignUp"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.Login"
+            android:name=".common.auth.patient.LoginPatient"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.auth.paciente.SignUp2ndClass"
+            android:name=".common.auth.patient.SignUp2ndClass"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.dashboard.paciente;
+package br.edu.ifg.hfa.common.dashboard.patient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.common.auth.paciente.RetailerStartUpScreen;
+import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
 import br.edu.ifg.hfa.db.SessionManager;
 
 public class RetailerDashboard extends AppCompatActivity {
@@ -20,14 +20,14 @@ public class RetailerDashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retailer_dashboard);
+        setContentView(R.layout.activity_retailer_dashboard_patient);
 
         TextView textView = findViewById(R.id.textView);
 
         sessionManager = new SessionManager(this, SessionManager.SESSION_USERSESSION);
         HashMap<String, String> usersDetails = sessionManager.getUsersDetailFromSession();
 
-        String fullName = usersDetails.get(SessionManager.KEY_FULLNAME);
+        String name = usersDetails.get(SessionManager.KEY_NAME);
         String email = usersDetails.get(SessionManager.KEY_EMAIL);
         String phoneNumber = usersDetails.get(SessionManager.KEY_PHONENUMBER);
         String password = usersDetails.get(SessionManager.KEY_PASSWORD);
@@ -36,7 +36,7 @@ public class RetailerDashboard extends AppCompatActivity {
         String gender = usersDetails.get(SessionManager.KEY_GENDER);
 
         textView.setText(
-                "Full Name: " + fullName + "\n" +
+                "Name: " + name + "\n" +
                         "Email: " + email + "\n" +
                         "Phone Number: " + phoneNumber + "\n" +
                         "Password: " + password + "\n" +

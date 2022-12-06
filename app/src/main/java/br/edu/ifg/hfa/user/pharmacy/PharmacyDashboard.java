@@ -1,15 +1,12 @@
-package br.edu.ifg.hfa.user.farmacia;
+package br.edu.ifg.hfa.user.pharmacy;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,23 +15,13 @@ import android.widget.LinearLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.adapter.home.CategoriesAdapter;
-import br.edu.ifg.hfa.adapter.home.CategoriesHelperClass;
-import br.edu.ifg.hfa.adapter.home.FeaturedAdpater;
-import br.edu.ifg.hfa.adapter.home.FeaturedHelperClass;
-import br.edu.ifg.hfa.adapter.home.MostViewedAdapter;
-import br.edu.ifg.hfa.adapter.home.MostViewedHelperClass;
-import br.edu.ifg.hfa.common.auth.paciente.RetailerStartUpScreen;
-import br.edu.ifg.hfa.common.dashboard.farmacia.RetailerDashboardFarmacia;
-import br.edu.ifg.hfa.common.dashboard.paciente.RetailerDashboard;
+import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
+import br.edu.ifg.hfa.common.dashboard.pharmacy.RetailerDashboardFarmacia;
 import br.edu.ifg.hfa.db.SessionManager;
 import br.edu.ifg.hfa.user.AllCategories;
-import br.edu.ifg.hfa.user.paciente.UserDashboard;
 
-public class FarmaciaDashboard extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
+public class PharmacyDashboard extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
 
     static final float END_SCALE = 0.7f;
 
@@ -48,7 +35,7 @@ public class FarmaciaDashboard extends AppCompatActivity  implements NavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_farmacia_dashboard);
+        setContentView(R.layout.activity_pharmacy_dashboard);
 
         menuIcon = findViewById(R.id.menu_icon_farmacia);
         contentView = findViewById(R.id.content_farmacia);
@@ -122,7 +109,7 @@ public class FarmaciaDashboard extends AppCompatActivity  implements NavigationV
 
     //Normal Functions
     public void callRetailerScreens(View view) {
-        SessionManager sessionManager = new SessionManager(FarmaciaDashboard.this, SessionManager.SESSION_USERSESSION);
+        SessionManager sessionManager = new SessionManager(PharmacyDashboard.this, SessionManager.SESSION_USERSESSION);
         if (sessionManager.checkLogin())
             startActivity(new Intent(getApplicationContext(), RetailerDashboardFarmacia.class));
         else

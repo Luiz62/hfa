@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_color_app"
-    tools:context=".common.auth.paciente.VerifyOTP">
+    tools:context=".common.auth.patient.VerifyOTP">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.user.paciente.UserDashboard;
+import br.edu.ifg.hfa.user.patient.PatientDashboard;
 
 public class AllCategories extends AppCompatActivity {
 
@@ -25,7 +25,7 @@ public class AllCategories extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), UserDashboard.class));
+                startActivity(new Intent(getApplicationContext(), PatientDashboard.class));
             }
         });
     }

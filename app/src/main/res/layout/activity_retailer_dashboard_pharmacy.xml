@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".common.dashboard.farmacia.RetailerDashboardFarmacia">
+    tools:context=".common.dashboard.pharmacy.RetailerDashboardFarmacia">
 
     <TextView
         android:id="@+id/textViewFarmacia"

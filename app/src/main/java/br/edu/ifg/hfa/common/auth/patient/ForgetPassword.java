@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.auth.paciente;
+package br.edu.ifg.hfa.common.auth.patient;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -186,7 +186,7 @@ public class ForgetPassword extends AppCompatActivity {
 
     //call Previous Screen on Back arrow click
     public void callBackScreenFromForgetPassword(View view) {
-        startActivity(new Intent(getApplicationContext(), Login.class));
+        startActivity(new Intent(getApplicationContext(), LoginPatient.class));
         finish();
     }
 }

@@ -9,6 +9,7 @@
     <!--Buttons-->
     <string name="skip_btn">Sair</string>
     <string name="next_btn">Próximo</string>
+    <string name="create_btn">Criar</string>
     <string name="let_get_started">Começar</string>
 
     <!--  Titles and Descriptions  -->
@@ -47,19 +48,25 @@
     <string name="retailer_heading">Deseja fazer \nlogin como?</string>
     <string name="create_account">Crie sua\nConta</string>
 
-    <!--  Field Strings  -->
-    <string name="enter_full_name">Nome Completo</string>
-    <string name="enter_username">CPF</string>
-    <string name="enter_email">Email</string>
-    <string name="enter_phone_number">Número</string>
-    <string name="enter_password">Senha</string>
+    <!--  Fields Patient  -->
+    <string name="enter_full_name_patient">Nome Completo</string>
+    <string name="enter_cpf_patient">CPF</string>
+    <string name="enter_email_patient">Email</string>
+    <string name="enter_phone_number_patient">Número</string>
+    <string name="enter_password_patient">Senha</string>
 
-    <!-- Sing Up -->
-    <string name="select_gender">Seu gênero</string>
-    <string name="gender_male">Masculino</string>
-    <string name="gender_female">Feminino</string>
-    <string name="gender_other">Outro</string>
-    <string name="select_your_age">Sua data de nascimento</string>
+    <!--  Fields Pharmacy  -->
+    <string name="enter_email_pharmacy">Email</string>
+    <string name="enter_name_pharmacy">Nome Fantasia</string>
+    <string name="enter_cnpj_pharmacy">CNPJ</string>
+    <string name="enter_password_pharmacy">Senha</string>
+
+    <!-- Sing Up Patient -->
+    <string name="select_gender_patient">Seu gênero</string>
+    <string name="gender_male_patient">Masculino</string>
+    <string name="gender_female_patient">Feminino</string>
+    <string name="gender_other_patient">Outro</string>
+    <string name="select_your_age_patient">Sua data de nascimento</string>
 
     <!--   OTP Screen -->
     <string name="otp_code_text">Co\nde</string>
@@ -82,13 +89,21 @@
 
     <!--   TODO:Strings for Dashboard    -->
 
-    <!--  Dashboard menus  -->
+    <!--  Dashboard Patient  -->
     <string name="receitas">Receitas</string>
     <string name="farmacias">Farmácias</string>
     <string name="historico">Histórico</string>
     <string name="consultas">Consultas</string>
     <string name="exames">Exames</string>
     <string name="alarmes">Alarmes</string>
+
+    <!--  Dashboard Pharmacy  -->
+    <string name="cadastrar_medicamento">Novo Remédio</string>
+    <string name="verificar_receita">Verificar Receita</string>
+    <string name="verificar_crm">Verificar CRM</string>
+    <string name="validar_receita">Validar Receita</string>
+    <string name="relatorio_vendas">Relatórios</string>
+    <string name="ajuda">Ajuda</string>
 
     <!--  Titles and Descriptions  -->
     <string name="featured_locations">All Featured Locations</string>

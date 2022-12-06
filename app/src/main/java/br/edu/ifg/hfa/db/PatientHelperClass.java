@@ -1,14 +1,14 @@
 package br.edu.ifg.hfa.db;
 
-public class UserHelperClass {
+public class PatientHelperClass {
 
-    String fullName, cpf, email, phoneNo, password, date, gender;
+    private String name, cpf, email, phoneNo, password, date, gender;
 
-    public UserHelperClass() {
+    public PatientHelperClass() {
     }
 
-    public UserHelperClass(String fullName, String cpf, String email, String phoneNo, String password, String date, String gender) {
-        this.fullName = fullName;
+    public PatientHelperClass(String name, String cpf, String email, String phoneNo, String password, String date, String gender) {
+        this.name = name;
         this.cpf = cpf;
         this.email = email;
         this.phoneNo = phoneNo;
@@ -17,12 +17,12 @@ public class UserHelperClass {
         this.gender = gender;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCpf() {

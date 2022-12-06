@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.auth.paciente;
+package br.edu.ifg.hfa.common.auth.patient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -47,7 +47,7 @@ public class ForgetPasswordSuccessMessage extends AppCompatActivity {
 
     //call login Screen
     public void backToLogin(View view){
-        startActivity(new Intent(getApplicationContext(), Login.class));
+        startActivity(new Intent(getApplicationContext(), LoginPatient.class));
         finish();
     }
 }

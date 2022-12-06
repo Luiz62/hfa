@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.auth.paciente;
+package br.edu.ifg.hfa.common.auth.patient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.common.auth.farmacia.LoginFarmacia;
+import br.edu.ifg.hfa.common.auth.pharmacy.LoginPharmacy;
 
 public class RetailerStartUpScreen extends AppCompatActivity {
 
@@ -23,7 +23,7 @@ public class RetailerStartUpScreen extends AppCompatActivity {
 
     public void callLoginScreen(View view) {
 
-        Intent intent = new Intent(getApplicationContext(), Login.class);
+        Intent intent = new Intent(getApplicationContext(), LoginPatient.class);
 
         Pair[] pairs = new Pair[1];
         pairs[0] = new Pair<View, String>(findViewById(R.id.login_btn), "transition_login");
@@ -40,7 +40,7 @@ public class RetailerStartUpScreen extends AppCompatActivity {
 
     public void callSignUpScreen(View view) {
 
-        Intent intent = new Intent(getApplicationContext(), LoginFarmacia.class);
+        Intent intent = new Intent(getApplicationContext(), LoginPharmacy.class);
 
         Pair[] pairs = new Pair[1];
         pairs[0] = new Pair<View, String>(findViewById(R.id.signup_btn), "transition_signup");

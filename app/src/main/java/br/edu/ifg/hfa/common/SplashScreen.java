@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.common.auth.paciente.RetailerStartUpScreen;
+import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
 
 public class SplashScreen extends AppCompatActivity {
 

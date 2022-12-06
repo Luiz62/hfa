@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.auth.paciente;
+package br.edu.ifg.hfa.common.auth.patient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -65,7 +65,7 @@ public class SignUp2ndClass extends AppCompatActivity {
         String _date = day + "/" + month + "/" + year;
 
         //All fields data passes from previous signup screen
-        String _fullName = getIntent().getStringExtra("fullName");
+        String _name = getIntent().getStringExtra("name");
         String _email = getIntent().getStringExtra("email");
         String _cpf = getIntent().getStringExtra("cpf");
         String _password = getIntent().getStringExtra("password");
@@ -74,7 +74,7 @@ public class SignUp2ndClass extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), SignUp3rdClass.class);
 
         //Pass all fields to the next activity
-        intent.putExtra("fullName", _fullName);
+        intent.putExtra("name", _name);
         intent.putExtra("email", _email);
         intent.putExtra("cpf", _cpf);
         intent.putExtra("password", _password);

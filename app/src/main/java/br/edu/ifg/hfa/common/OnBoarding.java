@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.adapter.slide.SliderAdapter;
-import br.edu.ifg.hfa.user.paciente.UserDashboard;
+import br.edu.ifg.hfa.user.patient.PatientDashboard;
 
 public class OnBoarding extends AppCompatActivity {
 
@@ -51,7 +51,7 @@ public class OnBoarding extends AppCompatActivity {
     }
 
     public void skip(View view) {
-        startActivity(new Intent(this, UserDashboard.class));
+        startActivity(new Intent(this, PatientDashboard.class));
         finish();
     }
 
