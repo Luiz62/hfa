@@ -21,6 +21,7 @@ public class SessionManager {
     public static final String KEY_FULLNAME = "fullName";
     public static final String KEY_NAME = "name";
     public static final String KEY_CPF = "cpf";
+    public static final String KEY_RG = "rg";
     public static final String KEY_CNPJ = "cnpj";
     public static final String KEY_EMAIL = "email";
     public static final String KEY_PHONENUMBER = "phoneNumber";
@@ -46,7 +47,7 @@ public class SessionManager {
      */
 
     public void createLoginSession(String name, String cpf, String email, String phoneNo,
-                                   String password, String age, String gender) {
+                                   String rg, String age, String gender) {
 
         editor.putBoolean(IS_LOGIN, true);
 
@@ -54,7 +55,7 @@ public class SessionManager {
         editor.putString(KEY_CPF, cpf);
         editor.putString(KEY_EMAIL, email);
         editor.putString(KEY_PHONENUMBER, phoneNo);
-        editor.putString(KEY_PASSWORD, password);
+        editor.putString(KEY_RG, rg);
         editor.putString(KEY_DATE, age);
         editor.putString(KEY_GENDER, gender);
 

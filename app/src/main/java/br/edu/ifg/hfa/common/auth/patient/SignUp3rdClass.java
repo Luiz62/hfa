@@ -29,6 +29,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import br.edu.ifg.hfa.R;
@@ -43,6 +44,8 @@ public class SignUp3rdClass extends AppCompatActivity {
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private FirebaseAuth mAuth;
+
+    private String _phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,76 +63,43 @@ public class SignUp3rdClass extends AppCompatActivity {
     }
 
     public void callVerifyOTPScreen(View view) {
-
-        //Check Internet Connection
         CheckInternet checkInternet = new CheckInternet();
         if (!checkInternet.isConnected(this)) {
             showCustomDialog();
             return;
         }
 
-        //Validate fields
-        if (!validatePhoneNumber()) {
+        loadFields();
+
+        if (!validatePhoneNumber())
             return;
-        }//Validation succeeded and now move to next screen to verify phone number and save data
 
-
-        //Get all values passed from previous screens using Intent
         final String _name = getIntent().getStringExtra("name");
         final String _email = getIntent().getStringExtra("email");
         final String _cpf = getIntent().getStringExtra("cpf");
-        final String _password = getIntent().getStringExtra("password");
+        final String _rg = getIntent().getStringExtra("rg");
         final String _date = getIntent().getStringExtra("date");
         final String _gender = getIntent().getStringExtra("gender");
 
-        //Get values from fields
-        String _getUserEnteredPhoneNumber = phoneNumber.getEditText().getText().toString().trim(); //Get Phone Number
-        if (_getUserEnteredPhoneNumber.charAt(0) == '0') {
-            _getUserEnteredPhoneNumber = _getUserEnteredPhoneNumber.substring(1);
-        } //remove 0 at the start if entered by the user
+        if (_phoneNumber.charAt(0) == '0')
+            _phoneNumber = _phoneNumber.substring(1);
+
         String _countryCode = countryCodePicker.getSelectedCountryCode();
-        String _number = _getUserEnteredPhoneNumber;
+        String _number = _phoneNumber;
         final String _phoneNo = "+" + _countryCode + _number;
 
+        Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
 
-        //Check weather User exists or not in database
-        Query checkUser = FirebaseDatabase.getInstance().getReference("Users").orderByChild("phoneNo").equalTo(_phoneNo);
-        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //If Phone Number exists then get password
-                if (dataSnapshot.exists()) {
-                    phoneNumber.setError("Phone Number Already Registered!");
-                    progressbar.setVisibility(View.GONE);
-                    return;
-                } else {
+        intent.putExtra("name", _name);
+        intent.putExtra("email", _email);
+        intent.putExtra("cpf", _cpf);
+        intent.putExtra("rg", _rg);
+        intent.putExtra("date", _date);
+        intent.putExtra("gender", _gender);
+        intent.putExtra("phoneNo", _phoneNo);
+        intent.putExtra("whatToDO", "createNewUser");
 
-                    phoneNumber.setError(null);
-                    phoneNumber.setErrorEnabled(false);
-
-                    Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
-
-                    intent.putExtra("name", _name);
-                    intent.putExtra("email", _email);
-                    intent.putExtra("cpf", _cpf);
-                    intent.putExtra("password", _password);
-                    intent.putExtra("date", _date);
-                    intent.putExtra("gender", _gender);
-                    intent.putExtra("phoneNo", _phoneNo);
-                    intent.putExtra("whatToDO", "createNewUser");
-
-                    otpSend(intent);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(SignUp3rdClass.this, databaseError.getMessage(),
-                        Toast.LENGTH_LONG).show();
-                progressbar.setVisibility(View.GONE);
-            }
-        });
-
+        otpSend(intent);
     }
 
     private void otpSend(Intent intent) {
@@ -176,12 +146,6 @@ public class SignUp3rdClass extends AppCompatActivity {
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
-
-    /*
-    Show
-    Internet
-    Connection Dialog
-     */
     private void showCustomDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -202,23 +166,16 @@ public class SignUp3rdClass extends AppCompatActivity {
                     }
                 });
 
-
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-
     }
 
-
-    /*
-    Validation function
-     */
     private boolean validatePhoneNumber() {
-        String val = phoneNumber.getEditText().getText().toString().trim();
         String checkspaces = "\\A\\w{1,20}\\z";
-        if (val.isEmpty()) {
+        if (_phoneNumber.isEmpty()) {
             phoneNumber.setError("Enter valid phone number");
             return false;
-        } else if (!val.matches(checkspaces)) {
+        } else if (!_phoneNumber.matches(checkspaces)) {
             phoneNumber.setError("No White spaces are allowed!");
             return false;
         } else {
@@ -227,5 +184,9 @@ public class SignUp3rdClass extends AppCompatActivity {
             return true;
         }
 
+    }
+
+    private void loadFields() {
+        _phoneNumber = Objects.requireNonNull(phoneNumber.getEditText()).getText().toString().trim();
     }
 }

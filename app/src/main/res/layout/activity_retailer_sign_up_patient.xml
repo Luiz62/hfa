@@ -95,6 +95,31 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/signup_rg"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_rg_patient"
+                android:textColorHint="@color/secodary_color_app"
+                app:boxStrokeColor="@color/secodary_color_app"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconTint="@color/secodary_color_app"
+                app:hintTextColor="@color/secodary_color_app"
+                app:passwordToggleTint="@color/secodary_color_app"
+                app:startIconDrawable="@drawable/ic_baseline_assignment_ind_24"
+                app:startIconTint="@color/secodary_color_app">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/muli_semibold"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/secodary_color_app"
+                    android:textCursorDrawable="@null" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/signup_cpf"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
@@ -144,32 +169,6 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/signup_password"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/enter_password_patient"
-                android:textColorHint="@color/secodary_color_app"
-                app:boxStrokeColor="@color/secodary_color_app"
-                app:boxStrokeWidthFocused="2dp"
-                app:endIconTint="@color/secodary_color_app"
-                app:hintTextColor="@color/secodary_color_app"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/secodary_color_app"
-                app:startIconDrawable="@drawable/ic_baseline_lock_24"
-                app:startIconTint="@color/secodary_color_app">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/muli_semibold"
-                    android:inputType="textPassword"
-                    android:textColor="@color/secodary_color_app"
-                    android:textCursorDrawable="@null" />
-
-            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 

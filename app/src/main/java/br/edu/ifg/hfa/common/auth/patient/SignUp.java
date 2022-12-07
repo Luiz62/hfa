@@ -14,69 +14,59 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.Objects;
+
 import br.edu.ifg.hfa.R;
 
 public class SignUp extends AppCompatActivity {
 
-    //Variables
     ImageView backBtn;
     Button next;
     TextView titleText, slideText;
 
-    //Get Data Variables
-    TextInputLayout name, cpf, email, password;
+    TextInputLayout name, cpf, email, rg;
+    private String _name, _cpf, _email, _rg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_retailer_sign_up);
+        setContentView(R.layout.activity_retailer_sign_up_patient);
 
-        //Hooks for animation
         backBtn = findViewById(R.id.signup_back_button);
         next = findViewById(R.id.signup_next_button);
         titleText = findViewById(R.id.signup_title_text);
         slideText = findViewById(R.id.signup_slide_text);
 
-        //Hooks for getting data
         name = findViewById(R.id.signup_name);
         email = findViewById(R.id.signup_email);
         cpf = findViewById(R.id.signup_cpf);
-        password = findViewById(R.id.signup_password);
-
+        rg = findViewById(R.id.signup_rg);
     }
 
 
     public void callNextSigupScreen(View view) {
+        loadFields();
 
-        if (!validateName() | !validateCpf() | !validateEmail() | !validatePassword()) {
+        if (!validateName() | !validateCpf() | !validateEmail() | !validateRg())
             return;
-        }
-
-        //Get data
-        String _name = name.getEditText().getText().toString().trim();
-        String _email = email.getEditText().getText().toString().trim();
-        String _cpf = cpf.getEditText().getText().toString().trim();
-        String _password = password.getEditText().getText().toString().trim();
-
 
         Intent intent = new Intent(getApplicationContext(), SignUp2ndClass.class);
 
         intent.putExtra("name", _name);
         intent.putExtra("email", _email);
         intent.putExtra("cpf", _cpf);
-        intent.putExtra("password", _password);
+        intent.putExtra("rg", _rg);
 
-
-        //Add Shared Animation
         Pair[] pairs = new Pair[4];
         pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
         pairs[1] = new Pair<View, String>(next, "transition_next_btn");
         pairs[2] = new Pair<View, String>(titleText, "transition_title_text");
         pairs[3] = new Pair<View, String>(slideText, "transition_slide_text");
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
+            ActivityOptions options = ActivityOptions
+                    .makeSceneTransitionAnimation(SignUp.this, pairs);
             startActivity(intent, options.toBundle());
         } else {
             startActivity(intent);
@@ -84,15 +74,8 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-
-    /*
-    Validation Functions
-     */
-
     private boolean validateName() {
-        String val = name.getEditText().getText().toString().trim();
-
-        if (val.isEmpty()) {
+        if (_name.isEmpty()) {
             name.setError("Field can not be empty");
             return false;
         } else {
@@ -100,38 +83,28 @@ public class SignUp extends AppCompatActivity {
             name.setErrorEnabled(false);
             return true;
         }
-
     }
 
     private boolean validateCpf() {
-        String val = cpf.getEditText().getText().toString().trim();
-//        String checkspaces = "\\A\\w{1,20}\\z";
-
-        if (val.isEmpty()) {
+        if (_cpf.isEmpty()) {
             cpf.setError("Field can not be empty");
             return false;
-        } else if (val.length() > 11) {
+        } else if (_cpf.length() > 11) {
             cpf.setError("Username is too large!");
             return false;
-//        } else if (!val.matches(checkspaces)) {
-//            cpf.setError("No White spaces are allowed!");
-//            return false;
         } else {
             cpf.setError(null);
             cpf.setErrorEnabled(false);
             return true;
         }
-
     }
 
     private boolean validateEmail() {
-        String val = email.getEditText().getText().toString().trim();
         String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-
-        if (val.isEmpty()) {
+        if (_email.isEmpty()) {
             email.setError("Field can not be empty");
             return false;
-        } else if (!val.matches(checkEmail)) {
+        } else if (!_email.matches(checkEmail)) {
             email.setError("Invalid Email!");
             return false;
         } else {
@@ -139,35 +112,25 @@ public class SignUp extends AppCompatActivity {
             email.setErrorEnabled(false);
             return true;
         }
-
     }
 
-    private boolean validatePassword() {
-        String val = password.getEditText().getText().toString().trim();
-        String checkPassword = "^" +
-                //"(?=.*[0-9])" +         //at least 1 digit
-                //"(?=.*[a-z])" +         //at least 1 lower case letter
-                //"(?=.*[A-Z])" +         //at least 1 upper case letter
-                "(?=.*[a-zA-Z])" +      //any letter
-                //"(?=.*[@#$%^&+=])" +    //at least 1 special character
-                "(?=\\S+$)" +           //no white spaces
-                ".{4,}" +               //at least 4 characters
-                "$";
-
-        if (val.isEmpty()) {
-            password.setError("Field can not be empty");
-            return false;
-        } else if (!val.matches(checkPassword)) {
-            password.setError("Password should contain 4 characters!");
+    private boolean validateRg() {
+        if (_rg.isEmpty()) {
+            rg.setError("Field can not be empty");
             return false;
         } else {
-            password.setError(null);
-            password.setErrorEnabled(false);
+            rg.setError(null);
+            rg.setErrorEnabled(false);
             return true;
         }
-
     }
 
+    private void loadFields() {
+        _name = Objects.requireNonNull(name.getEditText()).getText().toString().trim();
+        _email = Objects.requireNonNull(email.getEditText()).getText().toString().trim();
+        _cpf = Objects.requireNonNull(cpf.getEditText()).getText().toString().trim();
+        _rg = Objects.requireNonNull(rg.getEditText()).getText().toString().trim();
+    }
 
     public void callLoginFromSignUp(View view) {
         startActivity(new Intent(getApplicationContext(), LoginPatient.class));

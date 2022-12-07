@@ -51,6 +51,7 @@
     <!--  Fields Patient  -->
     <string name="enter_full_name_patient">Nome Completo</string>
     <string name="enter_cpf_patient">CPF</string>
+    <string name="enter_rg_patient">RG</string>
     <string name="enter_email_patient">Email</string>
     <string name="enter_phone_number_patient">Número</string>
     <string name="enter_password_patient">Senha</string>

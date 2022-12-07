@@ -4,17 +4,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.chaos.view.PinView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -23,14 +32,15 @@ import br.edu.ifg.hfa.common.dashboard.patient.RetailerDashboard;
 import br.edu.ifg.hfa.db.PatientHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
 import br.edu.ifg.hfa.user.patient.PatientDashboard;
+import br.edu.ifg.hfa.utils.CheckInternet;
 
 public class VerifyOTP extends AppCompatActivity {
 
     private PinView pinFromUser;
     private String codeBySystem;
     public TextView otpDescriptionText;
-    private String name, phoneNo, email, cpf, password, date, gender, whatToDO;
-
+    private String name, phoneNo, email, cpf, rg, date, gender, whatToDO;
+    RelativeLayout progressbar;
     public FirebaseAuth mAuth;
 
 
@@ -41,13 +51,16 @@ public class VerifyOTP extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_verify_o_t_p);
 
-        pinFromUser = findViewById(R.id.pin_view);
-        otpDescriptionText = findViewById(R.id.otp_description_text);
+        mAuth = FirebaseAuth.getInstance();
 
+        pinFromUser = findViewById(R.id.pin_view);
+
+        otpDescriptionText = findViewById(R.id.otp_description_text);
+        progressbar = findViewById(R.id.login_progress_bar);
         name = getIntent().getStringExtra("name");
         email = getIntent().getStringExtra("email");
         cpf = getIntent().getStringExtra("cpf");
-        password = getIntent().getStringExtra("password");
+        rg = getIntent().getStringExtra("rg");
         date = getIntent().getStringExtra("date");
         gender = getIntent().getStringExtra("gender");
         phoneNo = getIntent().getStringExtra("phoneNo");
@@ -67,30 +80,30 @@ public class VerifyOTP extends AppCompatActivity {
                 FirebaseAuth
                         .getInstance()
                         .signInWithCredential(credential)
-                        .addOnCompleteListener(task -> {
-                            if (task.isSuccessful()) {
-                                if (whatToDO.equals("updateData"))
-                                    updateOldUsersData();
-                                else if (whatToDO.equals("createNewUser"))
-                                    storeNewUsersData();
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    if (whatToDO.equals("updateData"))
+                                        updateOldUsersData();
+                                    else if (whatToDO.equals("createNewUser"))
+                                        storeNewUsersData();
+                                    else if (whatToDO.equals("loginPatient"))
+                                        loginPatient();
 
-                                Toast.makeText(VerifyOTP.this, "Conta criada com sucesso!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(VerifyOTP.this, PatientDashboard.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(VerifyOTP.this, "OTP is not Valid!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(VerifyOTP.this,
+                                            PatientDashboard.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                } else {
+                                    Toast.makeText(VerifyOTP.this, "OTP is not Valid!",
+                                            Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
             }
         }
     }
-
-
-    /*
-    Functions To Update
-    OR Create New User
-     */
 
     private void updateOldUsersData() {
 
@@ -107,19 +120,72 @@ public class VerifyOTP extends AppCompatActivity {
             DatabaseReference reference = rootNode.getReference("users");
 
             PatientHelperClass addNewUser;
-            addNewUser = new PatientHelperClass(name, cpf, email, password, phoneNo, date, gender);
+            addNewUser = new PatientHelperClass(name, cpf, email, rg, phoneNo, date, gender);
             reference.child(Objects.requireNonNull(this.mAuth.getUid()))
                     .setValue(addNewUser);
 
             SessionManager sessionManager = new SessionManager(this,
                     SessionManager.SESSION_USERSESSION);
-            sessionManager.createLoginSession(name, cpf, email, password, phoneNo, date, gender);
+            sessionManager.createLoginSession(name, cpf, email, rg, phoneNo, date, gender);
+
+            Toast.makeText(VerifyOTP.this, "Conta criada com sucesso!",
+                    Toast.LENGTH_SHORT).show();
 
             startActivity(new Intent(getApplicationContext(), RetailerDashboard.class));
             finish();
         } else {
             Toast.makeText(this, "Faça login antes!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void loginPatient() {
+
+        Query checkUser = FirebaseDatabase.getInstance().getReference("users")
+                .orderByChild(Objects.requireNonNull(mAuth.getUid()));
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String _name = dataSnapshot.child(mAuth.getUid()).child("name")
+                            .getValue(String.class);
+                    String _cpf = dataSnapshot.child(mAuth.getUid()).child("cpf")
+                            .getValue(String.class);
+                    String _email = dataSnapshot.child(mAuth.getUid()).child("email")
+                            .getValue(String.class);
+                    String _phoneNo = dataSnapshot.child(mAuth.getUid()).child("phoneNo")
+                            .getValue(String.class);
+                    String _rg = dataSnapshot.child(mAuth.getUid()).child("rg")
+                            .getValue(String.class);
+                    String _dateOfBirth = dataSnapshot.child(mAuth.getUid()).child("date")
+                            .getValue(String.class);
+                    String _gender = dataSnapshot.child(mAuth.getUid()).child("gender")
+                            .getValue(String.class);
+
+                    SessionManager sessionManager = new SessionManager(VerifyOTP.this,
+                            SessionManager.SESSION_USERSESSION);
+                    sessionManager.createLoginSession(_name, _cpf, _email, _phoneNo, _rg,
+                            _dateOfBirth, _gender);
+
+                    startActivity(new Intent(getApplicationContext(), PatientDashboard.class));
+                    finish();
+                    progressbar.setVisibility(View.GONE);
+
+                    Toast.makeText(VerifyOTP.this, "Sucesso no login!",
+                            Toast.LENGTH_SHORT).show();
+
+
+                } else {
+                    progressbar.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressbar.setVisibility(View.GONE);
+                Toast.makeText(VerifyOTP.this, databaseError.getMessage(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void callNextScreenFromOTP(View view) {

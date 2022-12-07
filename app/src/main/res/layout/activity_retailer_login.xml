@@ -76,70 +76,15 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/login_password"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/login_phone_number"
-                android:hint="@string/enter_password_patient"
-                android:textColorHint="@color/secodary_color_app"
-                app:boxStrokeColor="@color/secodary_color_app"
-                app:boxStrokeWidthFocused="2dp"
-                app:endIconMode="password_toggle"
-                app:endIconTint="@color/secodary_color_app"
-                app:hintTextColor="@color/secodary_color_app"
-                app:startIconDrawable="@drawable/field_password_icon"
-                app:startIconTint="@color/secodary_color_app">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_password_editText"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/muli"
-                    android:inputType="textPassword"
-                    android:textColor="@color/secodary_color_app" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <RelativeLayout
-                android:id="@+id/forget_password_block"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/login_password"
-                android:layout_marginTop="10dp">
-
-                <CheckBox
-                    android:id="@+id/remember_me"
-                    style="@style/Widget.AppCompat.CompoundButton.CheckBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:buttonTint="@color/secodary_color_app"
-                    android:text="@string/remember_me"
-                    android:textColor="@color/secodary_color_app" />
-
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:background="#00000000"
-                    android:onClick="callForgetPassword"
-                    android:text="@string/forget_password" />
-
-            </RelativeLayout>
-
 
             <Button
                 android:id="@+id/letTheUserLogIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/forget_password_block"
+                android:layout_below="@id/login_phone_number"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/my_button_bg"
-                android:onClick="letTheUserLoggedIn"
+                android:onClick="letTheUserLoggedInPatient"
                 android:text="@string/login"
                 android:textColor="@color/secodary_color_app" />
 

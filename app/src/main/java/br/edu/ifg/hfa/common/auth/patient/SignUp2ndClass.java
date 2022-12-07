@@ -1,7 +1,5 @@
 package br.edu.ifg.hfa.common.auth.patient;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +13,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
@@ -32,56 +32,46 @@ public class SignUp2ndClass extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_sign_up2nd_class);
 
-        //Hooks
         backBtn = findViewById(R.id.signup_back_button);
         next = findViewById(R.id.signup_next_button);
         titleText = findViewById(R.id.signup_title_text);
         slideText = findViewById(R.id.signup_slide_text);
         radioGroup = findViewById(R.id.radio_group);
         datePicker = findViewById(R.id.age_picker);
-
-
     }
 
     public void call3rdSigupScreen(View view) {
 
-        //Check validation
-        if (!validateGender() | !validateAge()) {
+        if (!validateGender() | !validateAge())
             return;
-        }//Validation succeeded and now move to next screen
 
-        //Get the data from fields of gender and Calender
-        //Get Gender
         selectedGender = findViewById(radioGroup.getCheckedRadioButtonId());
         String _gender = selectedGender.getText().toString();
 
-        //Get Date
         int day = datePicker.getDayOfMonth();
         int month = datePicker.getMonth();
         int year = datePicker.getYear();
         String _date = day + "/" + month + "/" + year;
 
-        //All fields data passes from previous signup screen
         String _name = getIntent().getStringExtra("name");
         String _email = getIntent().getStringExtra("email");
         String _cpf = getIntent().getStringExtra("cpf");
-        String _password = getIntent().getStringExtra("password");
+        String _rg = getIntent().getStringExtra("rg");
 
 
         Intent intent = new Intent(getApplicationContext(), SignUp3rdClass.class);
 
-        //Pass all fields to the next activity
         intent.putExtra("name", _name);
         intent.putExtra("email", _email);
         intent.putExtra("cpf", _cpf);
-        intent.putExtra("password", _password);
+        intent.putExtra("rg", _rg);
         intent.putExtra("date", _date);
         intent.putExtra("gender", _gender);
 
-        //Add Transition and call next activity
         Pair[] pairs = new Pair[4];
         pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
         pairs[1] = new Pair<View, String>(next, "transition_next_btn");
@@ -94,14 +84,8 @@ public class SignUp2ndClass extends AppCompatActivity {
         } else {
             startActivity(intent);
         }
-
     }
 
-
-    /*
-    Validation
-    Functions
-     */
     private boolean validateGender() {
         if (radioGroup.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "Please Select Gender", Toast.LENGTH_SHORT).show();
@@ -111,14 +95,14 @@ public class SignUp2ndClass extends AppCompatActivity {
         }
     }
 
-
     private boolean validateAge() {
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
         int userAge = datePicker.getYear();
         int isAgeValid = currentYear - userAge;
 
-        if (isAgeValid < 14) {
-            Toast.makeText(this, "You are not eligible to apply", Toast.LENGTH_SHORT).show();
+        if (isAgeValid < 13) {
+            Toast.makeText(this, "You are not eligible to apply",
+                    Toast.LENGTH_SHORT).show();
             return false;
         } else
             return true;
