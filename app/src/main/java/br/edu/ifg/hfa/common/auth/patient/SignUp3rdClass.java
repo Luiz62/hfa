@@ -99,6 +99,8 @@ public class SignUp3rdClass extends AppCompatActivity {
         intent.putExtra("phoneNo", _phoneNo);
         intent.putExtra("whatToDO", "createNewUser");
 
+        progressbar.setVisibility(View.VISIBLE);
+
         otpSend(intent);
     }
 

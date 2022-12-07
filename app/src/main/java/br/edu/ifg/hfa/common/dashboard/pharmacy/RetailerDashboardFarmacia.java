@@ -33,7 +33,7 @@ public class RetailerDashboardFarmacia extends AppCompatActivity {
         String cnpj = usersDetails.get(SessionManager.KEY_CNPJ);
 
         textView.setText(
-                "Full Name: " + name + "\n" +
+                "Name: " + name + "\n" +
                         "Email: " + email + "\n" +
                         "Password: " + password + "\n" +
                         "Cnpj: " + cnpj + "\n"

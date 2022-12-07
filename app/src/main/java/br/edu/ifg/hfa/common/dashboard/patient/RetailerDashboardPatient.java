@@ -13,7 +13,7 @@ import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
 import br.edu.ifg.hfa.db.SessionManager;
 
-public class RetailerDashboard extends AppCompatActivity {
+public class RetailerDashboardPatient extends AppCompatActivity {
 
     SessionManager sessionManager;
 

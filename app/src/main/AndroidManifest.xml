@@ -23,7 +23,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".user.pharmacy.PharmacyDashboard"
+            android:name=".common.dashboard.pharmacy.PharmacyDashboard"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -93,21 +93,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".user.AllCategories"
+            android:name=".common.dashboard.AllCategories"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".user.patient.PatientDashboard"
+            android:name=".common.dashboard.patient.PatientDashboard"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.dashboard.patient.RetailerDashboard"
+            android:name=".common.dashboard.patient.RetailerDashboardPatient"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

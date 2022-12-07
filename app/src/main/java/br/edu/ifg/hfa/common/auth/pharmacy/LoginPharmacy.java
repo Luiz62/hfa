@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -20,23 +19,16 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.auth.patient.ForgetPassword;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
-import br.edu.ifg.hfa.db.PharmacyHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
-import br.edu.ifg.hfa.user.patient.PatientDashboard;
-import br.edu.ifg.hfa.user.pharmacy.PharmacyDashboard;
+import br.edu.ifg.hfa.common.dashboard.pharmacy.PharmacyDashboard;
 import br.edu.ifg.hfa.utils.CheckInternet;
 
 public class LoginPharmacy extends AppCompatActivity {
@@ -69,11 +61,6 @@ public class LoginPharmacy extends AppCompatActivity {
         passwordEditTextFarmacia = findViewById(R.id.login_password_editText_farmacia);
     }
 
-    /*
-    Login the
-    user in
-    app!
-     */
     public void letTheUserLoggedIn(View view) {
         loadFields();
 
@@ -124,12 +111,6 @@ public class LoginPharmacy extends AppCompatActivity {
         }
     }
 
-
-    /*
-    Show
-    Internet
-    Connection Dialog
-     */
     private void showCustomDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -156,10 +137,6 @@ public class LoginPharmacy extends AppCompatActivity {
 
     }
 
-    /*
-    Fields
-    Validations
-     */
     private boolean validateFields() {
         if (_email.isEmpty()) {
             email.setError("Phone number can not be empty");
@@ -183,15 +160,9 @@ public class LoginPharmacy extends AppCompatActivity {
         _password = Objects.requireNonNull(password.getEditText()).getText().toString().trim();
     }
 
-    /*
-    Function to call
-    the Forget Password
-    Screen
-     */
     public void callForgetPassword(View view) {
         startActivity(new Intent(getApplicationContext(), ForgetPassword.class));
     }
-
 
     public void callSignUpFromLoginPharmacy(View view) {
         startActivity(new Intent(getApplicationContext(), SingUpPharmacy.class));

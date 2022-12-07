@@ -16,11 +16,10 @@ import android.widget.TextView;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.adapter.slide.SliderAdapter;
-import br.edu.ifg.hfa.user.patient.PatientDashboard;
+import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
 
 public class OnBoarding extends AppCompatActivity {
 
-    //Variables
     ViewPager viewPager;
     LinearLayout dotsLayout;
     SliderAdapter sliderAdapter;

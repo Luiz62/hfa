@@ -28,11 +28,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.common.dashboard.patient.RetailerDashboard;
+import br.edu.ifg.hfa.common.dashboard.patient.RetailerDashboardPatient;
 import br.edu.ifg.hfa.db.PatientHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
-import br.edu.ifg.hfa.user.patient.PatientDashboard;
-import br.edu.ifg.hfa.utils.CheckInternet;
+import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
 
 public class VerifyOTP extends AppCompatActivity {
 
@@ -73,7 +72,8 @@ public class VerifyOTP extends AppCompatActivity {
 
     private void verifyCode(String code) {
         if (code.isEmpty()) {
-            Toast.makeText(VerifyOTP.this, "OTP is not Valid!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(VerifyOTP.this, "OTP is not Valid!", Toast.LENGTH_SHORT)
+                    .show();
         } else {
             if (codeBySystem != null) {
                 PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeBySystem, code);
@@ -120,18 +120,18 @@ public class VerifyOTP extends AppCompatActivity {
             DatabaseReference reference = rootNode.getReference("users");
 
             PatientHelperClass addNewUser;
-            addNewUser = new PatientHelperClass(name, cpf, email, rg, phoneNo, date, gender);
+            addNewUser = new PatientHelperClass(name, rg, cpf, email, phoneNo, date, gender);
             reference.child(Objects.requireNonNull(this.mAuth.getUid()))
                     .setValue(addNewUser);
 
             SessionManager sessionManager = new SessionManager(this,
                     SessionManager.SESSION_USERSESSION);
-            sessionManager.createLoginSession(name, cpf, email, rg, phoneNo, date, gender);
+            sessionManager.createLoginSession(name, cpf, email, phoneNo, rg, date, gender);
 
             Toast.makeText(VerifyOTP.this, "Conta criada com sucesso!",
                     Toast.LENGTH_SHORT).show();
 
-            startActivity(new Intent(getApplicationContext(), RetailerDashboard.class));
+            startActivity(new Intent(getApplicationContext(), RetailerDashboardPatient.class));
             finish();
         } else {
             Toast.makeText(this, "Faça login antes!", Toast.LENGTH_SHORT).show();
@@ -166,8 +166,6 @@ public class VerifyOTP extends AppCompatActivity {
                     sessionManager.createLoginSession(_name, _cpf, _email, _phoneNo, _rg,
                             _dateOfBirth, _gender);
 
-                    startActivity(new Intent(getApplicationContext(), PatientDashboard.class));
-                    finish();
                     progressbar.setVisibility(View.GONE);
 
                     Toast.makeText(VerifyOTP.this, "Sucesso no login!",
@@ -176,6 +174,8 @@ public class VerifyOTP extends AppCompatActivity {
 
                 } else {
                     progressbar.setVisibility(View.GONE);
+                    Toast.makeText(VerifyOTP.this, "Falha no login!",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
 

@@ -1,20 +1,17 @@
 package br.edu.ifg.hfa.common.auth.patient;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ActivityOptions;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -23,19 +20,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.db.SessionManager;
-import br.edu.ifg.hfa.user.patient.PatientDashboard;
 import br.edu.ifg.hfa.utils.CheckInternet;
 
 public class LoginPatient extends AppCompatActivity {
@@ -64,38 +56,26 @@ public class LoginPatient extends AppCompatActivity {
         progressbar = findViewById(R.id.login_progress_bar);
         phoneNumberEditText = findViewById(R.id.login_phone_number_editText);
 
-
-        SessionManager sessionManager = new SessionManager(LoginPatient.this, SessionManager.SESSION_REMEMMBERME);
-        if (sessionManager.checkRememberMe()) {
-            HashMap<String, String> rememberMeDetails = sessionManager.getRemeberMeDetailsFromSession();
-            phoneNumberEditText.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPHONENUMBER));
-        }
-
     }
 
-    /*
-    Login the
-    user in
-    app!
-     */
     public void letTheUserLoggedInPatient(View view) {
+        loadFields();
+
         CheckInternet checkInternet = new CheckInternet();
+
         if (!checkInternet.isConnected(this)) {
             showCustomDialog();
             return;
         }
 
-        if (!validateFields()) {
+        if (!validateFields())
             return;
-        }
+
         progressbar.setVisibility(View.VISIBLE);
 
-        loadFields();
-        //Get values from fields
-
-        if (_phoneNumber.charAt(0) == '0') {
+        if (_phoneNumber.charAt(0) == '0')
             _phoneNumber = _phoneNumber.substring(1);
-        } //remove 0 at the start if entered by the user
+
         final String _completePhoneNumber = "+" + countryCodePicker
                 .getSelectedCountryCode() + _phoneNumber;
 
@@ -140,12 +120,6 @@ public class LoginPatient extends AppCompatActivity {
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
-
-    /*
-    Show
-    Internet
-    Connection Dialog
-     */
     private void showCustomDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -171,14 +145,8 @@ public class LoginPatient extends AppCompatActivity {
 
     }
 
-
-    /*
-    Fields
-    Validations
-     */
     private boolean validateFields() {
 
-        String _phoneNumber = phoneNumber.getEditText().getText().toString().trim();
         String checkspaces = "\\A\\w{1,20}\\z";
 
         if (_phoneNumber.isEmpty()) {
@@ -196,18 +164,13 @@ public class LoginPatient extends AppCompatActivity {
     }
 
     private void loadFields() {
-        _phoneNumber = phoneNumber.getEditText().getText().toString().trim();
+        _phoneNumber = Objects.requireNonNull(phoneNumber.getEditText()).getText()
+                .toString().trim();
     }
 
-    /*
-    Function to call
-    the Forget Password
-    Screen
-     */
     public void callForgetPassword(View view) {
         startActivity(new Intent(getApplicationContext(), ForgetPassword.class));
     }
-
 
     public void callSignUpFromLogin(View view) {
         startActivity(new Intent(getApplicationContext(), SignUp.class));

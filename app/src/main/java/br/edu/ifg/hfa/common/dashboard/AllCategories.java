@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.user;
+package br.edu.ifg.hfa.common.dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.user.patient.PatientDashboard;
+import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
 
 public class AllCategories extends AppCompatActivity {
 
@@ -19,7 +19,6 @@ public class AllCategories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_categories);
 
-        //Hooks
         backBtn = findViewById(R.id.back_pressed);
 
         backBtn.setOnClickListener(new View.OnClickListener() {

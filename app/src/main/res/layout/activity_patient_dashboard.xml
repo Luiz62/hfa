@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".user.patient.PatientDashboard"
+    tools:context=".common.dashboard.patient.PatientDashboard"
     android:background="@color/primary_color_app"
     android:id="@+id/drawer_layout">
 
@@ -66,129 +66,6 @@
 
                 </RelativeLayout>
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:orientation="horizontal">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="60dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:layout_margin="10dp"-->
-<!--                            android:background="@drawable/card_1"-->
-<!--                            android:elevation="8dp">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="30dp"-->
-<!--                                android:layout_height="30dp"-->
-<!--                                android:layout_centerInParent="true"-->
-<!--                                android:src="@drawable/ic_baseline_assignment_24" />-->
-
-<!--                        </RelativeLayout>-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:gravity="center_horizontal"-->
-<!--                            android:text="@string/receitas"-->
-<!--                            android:textAlignment="center" />-->
-
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="60dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:layout_margin="10dp"-->
-<!--                            android:background="@drawable/card_2"-->
-<!--                            android:elevation="8dp">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="30dp"-->
-<!--                                android:layout_height="30dp"-->
-<!--                                android:layout_centerInParent="true"-->
-<!--                                android:src="@drawable/ic_baseline_history_24" />-->
-
-<!--                        </RelativeLayout>-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:gravity="center_horizontal"-->
-<!--                            android:text="@string/historico"-->
-<!--                            android:textAlignment="center" />-->
-
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="60dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:layout_margin="10dp"-->
-<!--                            android:background="@drawable/card_3"-->
-<!--                            android:elevation="8dp">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="30dp"-->
-<!--                                android:layout_height="30dp"-->
-<!--                                android:layout_centerInParent="true"-->
-<!--                                android:src="@drawable/ic_baseline_medical_services_24" />-->
-
-<!--                        </RelativeLayout>-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:gravity="center_horizontal"-->
-<!--                            android:text="@string/consultas"-->
-<!--                            android:textAlignment="center" />-->
-
-<!--                    </LinearLayout>-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="vertical">-->
-
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="60dp"-->
-<!--                            android:layout_height="60dp"-->
-<!--                            android:layout_margin="10dp"-->
-<!--                            android:background="@drawable/card_4"-->
-<!--                            android:elevation="8dp">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="30dp"-->
-<!--                                android:layout_height="30dp"-->
-<!--                                android:layout_centerInParent="true"-->
-<!--                                android:src="@drawable/shop_icon" />-->
-
-<!--                        </RelativeLayout>-->
-
-<!--                        <TextView-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:gravity="center_horizontal"-->
-<!--                            android:text="@string/shops"-->
-<!--                            android:textAlignment="center" />-->
-
-<!--                    </LinearLayout>-->
-
-<!--                </LinearLayout>-->
 
 
                 <LinearLayout

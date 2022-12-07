@@ -2,6 +2,7 @@ package br.edu.ifg.hfa.common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,15 +16,14 @@ import android.widget.TextView;
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
 
-    private static int SPLASH_TIMER = 2000;
+    private static final int SPLASH_TIMER = 2000;
 
-    //Variables
     ImageView backgroundImage;
     TextView poweredByLine;
 
-    //Animations
     Animation sideAnim, bottomAnim;
     SharedPreferences onBoardingScreen;
 
@@ -34,15 +34,12 @@ public class SplashScreen extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.splash_screen);
 
-        //Hooks
         backgroundImage = findViewById(R.id.backgound_image);
         poweredByLine = findViewById(R.id.powered_by_line);
 
-        //Animations
         sideAnim = AnimationUtils.loadAnimation(this, R.anim.side_anim);
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_anim);
 
-        //set Animations on elements
         backgroundImage.setAnimation(sideAnim);
         poweredByLine.setAnimation(bottomAnim);
 
@@ -57,7 +54,7 @@ public class SplashScreen extends AppCompatActivity {
 
                     SharedPreferences.Editor editor = onBoardingScreen.edit();
                     editor.putBoolean("firstTime", false);
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
                     startActivity(intent);
