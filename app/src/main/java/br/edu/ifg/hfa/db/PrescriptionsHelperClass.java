@@ -1,8 +1,8 @@
 package br.edu.ifg.hfa.db;
 
-import java.io.Serializable;
-
 public class PrescriptionsHelperClass {
+
+    private String id;
 
     private String nomeHospital;
 
@@ -37,12 +37,11 @@ public class PrescriptionsHelperClass {
         this.data = data;
     }
 
-    @Override
-    public String toString() {
-        return "PrescriptionsHelperClass{" +
-                "nomeHospital='" + nomeHospital + '\'' +
-                ", nomeMedico='" + nomeMedico + '\'' +
-                ", data='" + data + '\'' +
-                '}';
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -25,13 +25,15 @@ import java.util.List;
 import java.util.Objects;
 
 import br.edu.ifg.hfa.R;
+import br.edu.ifg.hfa.adapter.RecyclerViewInterface;
 import br.edu.ifg.hfa.adapter.patient.AdapterPrescriptions;
 import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
+import br.edu.ifg.hfa.common.dashboard.pharmacy.ResumePrescriptionActivity;
 import br.edu.ifg.hfa.db.DbConnection;
 import br.edu.ifg.hfa.db.PrescriptionsHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
 
-public class PrescriptionsActivity extends AppCompatActivity {
+public class PrescriptionsActivity extends AppCompatActivity implements RecyclerViewInterface {
 
     private ImageView backBtn;
 
@@ -72,7 +74,8 @@ public class PrescriptionsActivity extends AppCompatActivity {
             }
         };
 
-        adapterPrescriptions = new AdapterPrescriptions(prescriptions, this);
+        adapterPrescriptions = new AdapterPrescriptions(prescriptions, this,
+                this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
@@ -92,6 +95,9 @@ public class PrescriptionsActivity extends AppCompatActivity {
                 prescriptions.clear();
                 for (DataSnapshot dados: snapshot.getChildren()) {
                     PrescriptionsHelperClass prescription = dados.getValue(PrescriptionsHelperClass.class);
+                    if (prescription != null) {
+                        prescription.setId(dados.getKey());
+                    }
                     prescriptions.add(prescription);
 
                 }
@@ -116,5 +122,15 @@ public class PrescriptionsActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         prescriptionsRef.removeEventListener(valueEventListenerPrescriptions);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(PrescriptionsActivity.this,
+                ResumePrescriptionActivity.class);
+
+        intent.putExtra("ID_PRESCRIPTION", prescriptions.get(position).getId());
+
+        startActivity(intent);
     }
 }
