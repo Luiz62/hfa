@@ -91,12 +91,20 @@
     <!--   TODO:Strings for Dashboard    -->
 
     <!--  Dashboard Patient  -->
-    <string name="receitas">Receitas</string>
-    <string name="farmacias">Farmácias</string>
+    <string name="prescriptions">Receitas</string>
+    <string name="pharmacies">Farmácias</string>
     <string name="historico">Histórico</string>
     <string name="consultas">Consultas</string>
     <string name="exames">Exames</string>
     <string name="alarmes">Alarmes</string>
+
+    <!-- Menu Receita -->
+    <string name="prescriptions_available">Receitas Disponiveis</string>
+    <string name="text_id_prescriptions">ID</string>
+    <string name="text_name_prescriptions">Nome Médico</string>
+    <string name="text_date_prescriptions">Data</string>
+
+
 
     <!--  Dashboard Pharmacy  -->
     <string name="cadastrar_medicamento">Novo Remédio</string>

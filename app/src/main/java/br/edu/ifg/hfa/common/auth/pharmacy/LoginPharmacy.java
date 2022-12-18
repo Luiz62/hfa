@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -86,8 +87,15 @@ public class LoginPharmacy extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful())
                     successfulLogin();
+                else
+                    failureLogin();
             }
         });
+    }
+
+    private void failureLogin() {
+        progressbar.setVisibility(View.GONE);
+        Toast.makeText(getApplicationContext(), "E-mail ou senha inválidos!", Toast.LENGTH_SHORT).show();
     }
 
     private void successfulLogin() {

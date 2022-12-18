@@ -7,16 +7,13 @@ import java.util.HashMap;
 
 public class SessionManager {
 
-    //Variables
     SharedPreferences usersSession;
     SharedPreferences.Editor editor;
     Context context;
 
-    //Session names
     public static final String SESSION_USERSESSION = "userLoginSession";
     public static final String SESSION_REMEMMBERME = "rememberMe";
 
-    //User session variables
     private static final String IS_LOGIN = "IsLoggedIn";
     public static final String KEY_FULLNAME = "fullName";
     public static final String KEY_NAME = "name";
@@ -29,22 +26,15 @@ public class SessionManager {
     public static final String KEY_DATE = "date";
     public static final String KEY_GENDER = "gender";
 
-    //Remember Me variables
     private static final String IS_REMEMBERME = "IsRememberMe";
     public static final String KEY_SESSIONPHONENUMBER = "phoneNumber";
     public static final String KEY_SESSIONPASSWORD = "password";
 
-    //Constructor
     public SessionManager(Context _context, String sessionName) {
         context = _context;
         usersSession = context.getSharedPreferences(sessionName, Context.MODE_PRIVATE);
         editor = usersSession.edit();
     }
-
-    /*
-    Users
-    Login Session
-     */
 
     public void createLoginSession(String name, String cpf, String email, String phoneNo,
                                    String rg, String age, String gender) {
@@ -98,11 +88,6 @@ public class SessionManager {
         editor.commit();
     }
 
-    /*
-    Remember Me
-    Session Functions
-     */
-
     public void createRememberMeSession(String phoneNo, String password) {
 
         editor.putBoolean(IS_REMEMBERME, true);
@@ -132,6 +117,4 @@ public class SessionManager {
         editor.clear();
         editor.commit();
     }
-
-
 }

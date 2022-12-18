@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -19,20 +18,12 @@ import android.widget.LinearLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.ArrayList;
-
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.adapter.home.CategoriesAdapter;
-import br.edu.ifg.hfa.adapter.home.CategoriesHelperClass;
-import br.edu.ifg.hfa.adapter.home.FeaturedAdpater;
-import br.edu.ifg.hfa.adapter.home.FeaturedHelperClass;
-import br.edu.ifg.hfa.adapter.home.MostViewedAdapter;
-import br.edu.ifg.hfa.adapter.home.MostViewedHelperClass;
 import br.edu.ifg.hfa.common.SplashScreen;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
 import br.edu.ifg.hfa.common.dashboard.pharmacy.PharmacyDashboard;
 import br.edu.ifg.hfa.db.SessionManager;
-import br.edu.ifg.hfa.common.dashboard.AllCategories;
+import br.edu.ifg.hfa.common.dashboard.PrescriptionsActivity;
 
 public class PatientDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -43,7 +34,7 @@ public class PatientDashboard extends AppCompatActivity implements NavigationVie
     RecyclerView.Adapter adapter;
     private GradientDrawable gradient1, gradient2, gradient3, gradient4;
     ImageView menuIcon;
-    LinearLayout contentView;
+    LinearLayout contentView, prescriptions;
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -60,8 +51,17 @@ public class PatientDashboard extends AppCompatActivity implements NavigationVie
         menuIcon = findViewById(R.id.menu_icon);
         contentView = findViewById(R.id.content);
 
+        prescriptions = findViewById(R.id.linearPrescriptions);
+
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
+
+        prescriptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PrescriptionsActivity.class));
+            }
+        });
 
         navigationDrawer();
     }
@@ -117,6 +117,9 @@ public class PatientDashboard extends AppCompatActivity implements NavigationVie
                 break;
             case R.id.nav_profile:
                 startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
+                break;
+            case R.id.nav_receitas:
+                startActivity(new Intent(getApplicationContext(), PrescriptionsActivity.class));
         }
 
 

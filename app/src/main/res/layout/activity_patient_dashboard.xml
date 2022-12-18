@@ -92,24 +92,25 @@
                             android:layout_margin="12dp"
                             android:background="#fff"
                             >
+
                             <LinearLayout
+                                android:id="@+id/linearPrescriptions"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                android:gravity="center"
                                 android:background="@color/color_accent"
-                                >
+                                android:gravity="center"
+                                android:orientation="vertical">
+
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_baseline_assignment_24"
-                                    />
+                                    android:src="@drawable/ic_baseline_assignment_24" />
 
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:padding="5dp"
-                                    android:text="@string/receitas"
+                                    android:text="@string/prescriptions"
                                     android:textAlignment="center" />
                             </LinearLayout>
 
@@ -211,7 +212,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:padding="5dp"
-                                    android:text="@string/farmacias"
+                                    android:text="@string/pharmacies"
                                     android:textAlignment="center" />
                             </LinearLayout>
 

@@ -20,7 +20,6 @@ import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.SplashScreen;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
 import br.edu.ifg.hfa.db.SessionManager;
-import br.edu.ifg.hfa.common.dashboard.AllCategories;
 
 public class PharmacyDashboard extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
 
