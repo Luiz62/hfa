@@ -116,7 +116,7 @@ public class PatientDashboard extends AppCompatActivity implements NavigationVie
                 startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                 break;
             case R.id.nav_profile:
-                startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
+                startActivity(new Intent(getApplicationContext(), RetailerDashboardPatient.class));
                 break;
             case R.id.nav_receitas:
                 startActivity(new Intent(getApplicationContext(), PrescriptionsActivity.class));

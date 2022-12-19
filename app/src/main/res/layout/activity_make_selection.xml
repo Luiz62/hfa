@@ -74,12 +74,12 @@
                 android:id="@+id/mobile_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+923332562233"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/muli"
+                android:layout_below="@id/mobile_title"
                 android:layout_toRightOf="@id/mobile_icon"
-                android:layout_below="@id/mobile_title"/>
+                android:fontFamily="@font/muli"
+                android:text="+1140028922"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
 
             <Button
@@ -122,12 +122,12 @@
                 android:id="@+id/mail_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="support@gmail.com"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/muli"
+                android:layout_below="@id/mail_title"
                 android:layout_toRightOf="@id/mail_icon"
-                android:layout_below="@id/mail_title"/>
+                android:fontFamily="@font/muli"
+                android:text="ifg@edu.com.br"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <Button
                 android:layout_width="match_parent"

@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".common.dashboard.pharmacy.PrescriptionsActivity"
     android:background="@color/primary_color_app">
 
@@ -39,9 +38,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
-            android:fontFamily="@font/brandon_grotesque_black"
             android:padding="10dp"
             android:text="@string/prescriptions_available"
+            android:textColor="@color/secodary_color_app"
             android:textAllCaps="true"
             android:textSize="30sp" />
 

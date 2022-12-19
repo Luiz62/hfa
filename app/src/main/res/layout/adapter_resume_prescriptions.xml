@@ -25,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/text_name_resume_prescriptions"
+                android:textColor="@color/secodary_color_app"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -35,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_description_resume_prescriptions"
+            android:textColor="@color/secodary_color_app"
             android:textSize="14sp" />
 
 

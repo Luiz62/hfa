@@ -12,7 +12,7 @@ import java.util.List;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.adapter.RecyclerViewInterface;
-import br.edu.ifg.hfa.db.PrescriptionsHelperClass;
+import br.edu.ifg.hfa.model.entity.PrescriptionsHelperClass;
 
 
 public class AdapterPrescriptions extends RecyclerView.Adapter<AdapterPrescriptions.MyViewHolder> {

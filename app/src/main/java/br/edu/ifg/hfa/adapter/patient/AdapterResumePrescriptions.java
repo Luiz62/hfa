@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.adapter.RecyclerViewInterface;
-import br.edu.ifg.hfa.db.MedicationHelperClass;
-import br.edu.ifg.hfa.db.PrescriptionsHelperClass;
+import br.edu.ifg.hfa.model.entity.MedicationHelperClass;
 
 
 public class AdapterResumePrescriptions extends RecyclerView.Adapter<AdapterResumePrescriptions.MyViewHolder> {

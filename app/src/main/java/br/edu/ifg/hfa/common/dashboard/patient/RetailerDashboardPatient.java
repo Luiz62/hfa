@@ -30,19 +30,17 @@ public class RetailerDashboardPatient extends AppCompatActivity {
         String name = usersDetails.get(SessionManager.KEY_NAME);
         String email = usersDetails.get(SessionManager.KEY_EMAIL);
         String phoneNumber = usersDetails.get(SessionManager.KEY_PHONENUMBER);
-        String password = usersDetails.get(SessionManager.KEY_PASSWORD);
         String cpf = usersDetails.get(SessionManager.KEY_CPF);
         String age = usersDetails.get(SessionManager.KEY_DATE);
         String gender = usersDetails.get(SessionManager.KEY_GENDER);
 
         textView.setText(
-                "Name: " + name + "\n" +
-                        "Email: " + email + "\n" +
-                        "Phone Number: " + phoneNumber + "\n" +
-                        "Password: " + password + "\n" +
+                "Nome: " + name + "\n" +
+                        "E-mail: " + email + "\n" +
+                        "Celular: " + phoneNumber + "\n" +
                         "Cpf: " + cpf + "\n" +
-                        "Date of Birth: " + age + "\n" +
-                        "Gender: " + gender + "\n"
+                        "Data de aniversário: " + age + "\n" +
+                        "Sexo: " + gender + "\n"
         );
     }
 

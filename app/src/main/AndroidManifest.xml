@@ -90,13 +90,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".common.OnBoarding"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".common.auth.patient.RetailerStartUpScreen"
             android:exported="false">
             <meta-data

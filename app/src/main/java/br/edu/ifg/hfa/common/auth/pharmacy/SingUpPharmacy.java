@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Objects;
 
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.db.PharmacyHelperClass;
+import br.edu.ifg.hfa.model.entity.PharmacyHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
 import br.edu.ifg.hfa.common.dashboard.pharmacy.PharmacyDashboard;
 

@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.db;
+package br.edu.ifg.hfa.model.entity;
 
 import br.edu.ifg.hfa.utils.StringUtils;
 

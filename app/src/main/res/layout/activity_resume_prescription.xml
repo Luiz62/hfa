@@ -59,9 +59,10 @@
                     android:id="@+id/nome_medico"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bungee"
                     android:text="@string/nome_medico"
+                    android:textColor="@color/secodary_color_app"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/profile_image"
                     app:layout_constraintTop_toTopOf="parent">
@@ -73,6 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/crm_medico"
+                    android:textColor="@color/secodary_color_app"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -91,52 +93,59 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bungee"
                     android:text="@string/local_consulta"
-                    android:textSize="18sp" />
+                    android:textColor="@color/secodary_color_app"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/local_consulta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/nome_default"
+                    android:textColor="@color/secodary_color_app"
                     android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bungee"
                     android:text="@string/nome_paciente"
-                    android:textSize="18sp" />
+                    android:textColor="@color/secodary_color_app"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/nome_paciente"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/nome_default"
+                    android:textColor="@color/secodary_color_app"
                     android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bungee"
                     android:text="@string/data_prescription"
-                    android:textSize="18sp" />
+                    android:textColor="@color/secodary_color_app"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/data_prescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/data_default"
+                    android:textColor="@color/secodary_color_app"
                     android:textSize="14sp" />
 
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bungee"
                     android:text="@string/medicamentos"
-                    android:textSize="18sp" />
+                    android:textColor="@color/secodary_color_app"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view"
@@ -149,9 +158,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bungee"
                     android:text="@string/qrcode"
-                    android:textSize="18sp" />
+                    android:textColor="@color/secodary_color_app"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

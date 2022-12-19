@@ -29,7 +29,7 @@ import java.util.Objects;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.dashboard.patient.RetailerDashboardPatient;
-import br.edu.ifg.hfa.db.PatientHelperClass;
+import br.edu.ifg.hfa.model.entity.PatientHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
 import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
 

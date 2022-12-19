@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.db;
+package br.edu.ifg.hfa.model.entity;
 
 public class PharmacyHelperClass {
 

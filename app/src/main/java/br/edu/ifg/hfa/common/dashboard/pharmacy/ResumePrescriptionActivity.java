@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,14 +22,11 @@ import java.util.List;
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.adapter.patient.AdapterPrescriptions;
 import br.edu.ifg.hfa.adapter.patient.AdapterResumePrescriptions;
-import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
 import br.edu.ifg.hfa.db.DbConnection;
-import br.edu.ifg.hfa.db.MedicationHelperClass;
-import br.edu.ifg.hfa.db.PrescriptionsHelperClass;
+import br.edu.ifg.hfa.model.entity.MedicationHelperClass;
+import br.edu.ifg.hfa.model.entity.PrescriptionsHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
-import br.edu.ifg.hfa.utils.StringUtils;
 
 public class ResumePrescriptionActivity extends AppCompatActivity {
 

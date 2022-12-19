@@ -9,7 +9,7 @@
     </group>
 
 
-    <item android:title="Profile">
+    <item android:title="Perfil">
         <menu>
 
             <group android:checkableBehavior="single">
@@ -26,7 +26,7 @@
         </menu>
     </item>
 
-    <item android:title="Categories">
+    <item android:title="Menu">
         <menu>
 
             <group android:checkableBehavior="single">
@@ -50,22 +50,4 @@
 
         </menu>
     </item>
-
-    <item android:title="Share">
-        <menu>
-
-            <group android:checkableBehavior="none">
-                <item
-                    android:id="@+id/nav_share"
-                    android:title="@string/share"
-                    android:icon="@drawable/menu_share_icon"/>
-                <item
-                    android:id="@+id/nav_rate_us"
-                    android:title="@string/rate_us"
-                    android:icon="@drawable/menu_rate_us_icon"/>
-            </group>
-
-        </menu>
-    </item>
-
 </menu>

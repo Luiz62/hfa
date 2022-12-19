@@ -24,7 +24,7 @@ import br.edu.ifg.hfa.adapter.RecyclerViewInterface;
 import br.edu.ifg.hfa.adapter.patient.AdapterPrescriptions;
 import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
 import br.edu.ifg.hfa.db.DbConnection;
-import br.edu.ifg.hfa.db.PrescriptionsHelperClass;
+import br.edu.ifg.hfa.model.entity.PrescriptionsHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
 
 public class PrescriptionsActivity extends AppCompatActivity implements RecyclerViewInterface {

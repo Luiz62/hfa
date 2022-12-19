@@ -76,15 +76,16 @@
 
 
     <!--   Reset Password -->
-    <string name="new_credentials">New\nCredentials</string>
-    <string name="new_credentials_detail">Your identity has been verified!\nSet your new password</string>
-    <string name="forget_password_detail">Provide your account\'s email for which you want to reset your password!</string>
-    <string name="password_updated">Password\nUpdated</string>
+    <string name="new_credentials">Novas\nCredenciais</string>
+    <string name="new_credentials_detail">Sua conta foi verificada com sucesso!\nInforme sua nova senha</string>
+    <string name="forget_pass">Redefinir senha</string>
+    <string name="forget_password_detail">Forneça o número para qual deseja redefinir a senha!</string>
+    <string name="password_updated">Senha\nAtualizada</string>
     <string name="password_updated_success_message">sua senha foi atualizada!</string>
-    <string name="make_selection">Make\nSelection</string>
-    <string name="make_selection_detail">Select which contact detail should we use to reset your password?</string>
+    <string name="make_selection">Escolha uma opção</string>
+    <string name="make_selection_detail">Com qual opção deseja redefir sua senha?</string>
     <string name="via_sms">via sms:</string>
-    <string name="via_mail">via mail:</string>
+    <string name="via_mail">via e-mail:</string>
     <string name="verify_code">Verificar Código</string>
     <string name="todo">TODO</string>
 
@@ -130,14 +131,9 @@
     <string name="featured_locations">All Featured Locations</string>
     <string name="featured_locations_description">All the locations that are featured and have the top demand in town!</string>
     <string name="most_viewed_locations">Most Viewed</string>
-    <string name="categories">Categories</string>
-
-
-    <!--   TODO: Menu Names     -->
+    <string name="menus_c">Menu</string>
 
     <!--     General Menu names     -->
-    <string name="all_categories">ALL CATEGORIES</string>
-    <string name="add_missing_place">ADD MISSING PLACE</string>
     <string name="rate_us">Rate Us</string>
 
     <!--     All Categories Menu names     -->
