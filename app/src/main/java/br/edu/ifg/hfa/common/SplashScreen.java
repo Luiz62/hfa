@@ -20,6 +20,7 @@ import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
 import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
 import br.edu.ifg.hfa.common.dashboard.pharmacy.PharmacyDashboard;
+import br.edu.ifg.hfa.db.DbConnection;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
@@ -32,17 +33,12 @@ public class SplashScreen extends AppCompatActivity {
     Animation sideAnim, bottomAnim;
     SharedPreferences onBoardingScreen;
 
-    private FirebaseUser mUser;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.splash_screen);
-
-        if (FirebaseAuth.getInstance().getCurrentUser() != null)
-            mUser = FirebaseAuth.getInstance().getCurrentUser();
 
         backgroundImage = findViewById(R.id.backgound_image);
         poweredByLine = findViewById(R.id.powered_by_line);
@@ -57,29 +53,30 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
+                FirebaseUser mUser = DbConnection.getAuth().getCurrentUser();
+
                 onBoardingScreen = getSharedPreferences("onBoardingScreen", MODE_PRIVATE);
                 boolean isFirstTime = onBoardingScreen.getBoolean("firstTime", true);
 
-                Intent intent;
+                Intent intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
 
                 if (isFirstTime) {
-
                     SharedPreferences.Editor editor = onBoardingScreen.edit();
                     editor.putBoolean("firstTime", false);
                     editor.apply();
-
-                    intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
-
                 } else {
                     if (mUser != null) {
-                        if (mUser.getEmail() != null)
-                            intent = new Intent(getApplicationContext(), PatientDashboard.class);
-                        else
-                            intent = new Intent(getApplicationContext(), PharmacyDashboard.class);
-                    } else {
-                      intent = new Intent(getApplicationContext(), RetailerStartUpScreen.class);
+                        if (mUser.getPhoneNumber() != null) {
+                            if (!mUser.getPhoneNumber().isEmpty())
+                                intent = new Intent(getApplicationContext(), PatientDashboard.class);
+                        }
+                        if (mUser.getEmail() != null) {
+                            if (!mUser.getEmail().isEmpty())
+                                intent = new Intent(getApplicationContext(), PharmacyDashboard.class);
+                        }
                     }
                 }
+
                 startActivity(intent);
                 finish();
             }

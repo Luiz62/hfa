@@ -15,7 +15,7 @@
         android:background="@color/primary_color_app"
         android:theme="@style/navigationTheme"
         android:layout_gravity="start"
-        app:menu="@menu/main_menu"/>
+        app:menu="@menu/main_menu_patient"/>
 
     <LinearLayout
         android:id="@+id/content"

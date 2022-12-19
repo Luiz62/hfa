@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
+import br.edu.ifg.hfa.db.DbConnection;
 import br.edu.ifg.hfa.db.SessionManager;
 
 public class RetailerDashboardPatient extends AppCompatActivity {
@@ -46,6 +47,7 @@ public class RetailerDashboardPatient extends AppCompatActivity {
 
     public void logoutTheUserFromSession(View view){
         sessionManager.logoutUserFromSession();
+        DbConnection.getAuth().signOut();
         startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
         finish();
     }

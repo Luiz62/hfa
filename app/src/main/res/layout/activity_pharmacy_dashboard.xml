@@ -15,7 +15,7 @@
         android:background="@color/primary_color_app"
         android:theme="@style/navigationTheme"
         android:layout_gravity="start"
-        app:menu="@menu/main_menu"/>
+        app:menu="@menu/main_menu_pharmacy"/>
 
     <LinearLayout
         android:id="@+id/content_farmacia"
@@ -241,13 +241,13 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_baseline_history_24" />
+                                    android:src="@drawable/ic_baseline_report_100" />
 
                                 <TextView
                                     android:layout_width="120dp"
                                     android:layout_height="wrap_content"
                                     android:padding="5dp"
-                                    android:text="@string/validar_receita"
+                                    android:text="@string/relatorio_vendas"
                                     android:textAlignment="center" />
                             </LinearLayout>
 
@@ -272,7 +272,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_baseline_help_24" />
+                                    android:src="@drawable/ic_baseline_help_100" />
 
                                 <TextView
                                     android:layout_width="120dp"

@@ -76,7 +76,7 @@ public class SignUp extends AppCompatActivity {
 
     private boolean validateName() {
         if (_name.isEmpty()) {
-            name.setError("Field can not be empty");
+            name.setError("Esse campo não pode ser vazio");
             return false;
         } else {
             name.setError(null);
@@ -87,10 +87,10 @@ public class SignUp extends AppCompatActivity {
 
     private boolean validateCpf() {
         if (_cpf.isEmpty()) {
-            cpf.setError("Field can not be empty");
+            cpf.setError("Esse campo não pode ser vazio!");
             return false;
         } else if (_cpf.length() > 11) {
-            cpf.setError("Username is too large!");
+            cpf.setError("Informe apenas 11 digitos!");
             return false;
         } else {
             cpf.setError(null);
@@ -102,10 +102,10 @@ public class SignUp extends AppCompatActivity {
     private boolean validateEmail() {
         String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         if (_email.isEmpty()) {
-            email.setError("Field can not be empty");
+            email.setError("Esse campo não pode ser vazio!");
             return false;
         } else if (!_email.matches(checkEmail)) {
-            email.setError("Invalid Email!");
+            email.setError("E-mail inválido!");
             return false;
         } else {
             email.setError(null);
@@ -116,7 +116,7 @@ public class SignUp extends AppCompatActivity {
 
     private boolean validateRg() {
         if (_rg.isEmpty()) {
-            rg.setError("Field can not be empty");
+            rg.setError("Esse campo não pode ser vazio!");
             return false;
         } else {
             rg.setError(null);

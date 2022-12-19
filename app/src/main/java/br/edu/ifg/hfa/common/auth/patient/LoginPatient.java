@@ -150,11 +150,11 @@ public class LoginPatient extends AppCompatActivity {
         String checkspaces = "\\A\\w{1,20}\\z";
 
         if (_phoneNumber.isEmpty()) {
-            phoneNumber.setError("Phone number can not be empty");
+            phoneNumber.setError("Esse número não pode ser vazio!");
             phoneNumber.requestFocus();
             return false;
         } else if (!_phoneNumber.matches(checkspaces)) {
-            phoneNumber.setError("No White spaces are allowed!");
+            phoneNumber.setError("Sem espaços entre os números!");
             return false;
         } else {
             phoneNumber.setError(null);

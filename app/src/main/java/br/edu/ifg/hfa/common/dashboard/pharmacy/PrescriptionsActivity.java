@@ -79,31 +79,34 @@ public class PrescriptionsActivity extends AppCompatActivity implements Recycler
     }
 
     private void loadList() {
-        prescriptionsRef = DbConnection.getDatabaseReference().child("patients")
-                .child("prescriptions")
-                .child(cpf);
+        if (cpf != null) {
+            prescriptionsRef = DbConnection.getDatabaseReference().child("patients")
+                    .child("prescriptions")
+                    .child(cpf);
 
-        valueEventListenerPrescriptions = prescriptionsRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                prescriptions.clear();
-                for (DataSnapshot dados: snapshot.getChildren()) {
-                    PrescriptionsHelperClass prescription = dados.getValue(PrescriptionsHelperClass.class);
-                    if (prescription != null) {
-                        prescription.setId(dados.getKey());
+            valueEventListenerPrescriptions = prescriptionsRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    prescriptions.clear();
+                    for (DataSnapshot dados: snapshot.getChildren()) {
+                        PrescriptionsHelperClass prescription = dados.getValue(PrescriptionsHelperClass.class);
+                        if (prescription != null) {
+                            prescription.setId(dados.getKey());
+                        }
+                        prescriptions.add(prescription);
+
                     }
-                    prescriptions.add(prescription);
 
+                    adapterPrescriptions.notifyDataSetChanged();
                 }
 
-                adapterPrescriptions.notifyDataSetChanged();
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                }
+            });
+        }
 
-            }
-        });
     }
 
     @Override
@@ -115,7 +118,8 @@ public class PrescriptionsActivity extends AppCompatActivity implements Recycler
     @Override
     protected void onStop() {
         super.onStop();
-        prescriptionsRef.removeEventListener(valueEventListenerPrescriptions);
+        if (valueEventListenerPrescriptions != null)
+            prescriptionsRef.removeEventListener(valueEventListenerPrescriptions);
     }
 
     @Override

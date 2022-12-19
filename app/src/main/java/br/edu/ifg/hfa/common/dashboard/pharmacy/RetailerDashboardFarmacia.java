@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
+import br.edu.ifg.hfa.db.DbConnection;
 import br.edu.ifg.hfa.db.SessionManager;
 
 public class RetailerDashboardFarmacia extends AppCompatActivity {
@@ -29,19 +30,18 @@ public class RetailerDashboardFarmacia extends AppCompatActivity {
 
         String name = usersDetails.get(SessionManager.KEY_NAME);
         String email = usersDetails.get(SessionManager.KEY_EMAIL);
-        String password = usersDetails.get(SessionManager.KEY_PASSWORD);
         String cnpj = usersDetails.get(SessionManager.KEY_CNPJ);
 
         textView.setText(
-                "Name: " + name + "\n" +
-                        "Email: " + email + "\n" +
-                        "Password: " + password + "\n" +
+                "Nome: " + name + "\n" +
+                        "E-mail: " + email + "\n" +
                         "Cnpj: " + cnpj + "\n"
         );
     }
 
     public void logoutTheUserFromSession(View view){
         sessionManager.logoutUserFromSession();
+        DbConnection.getAuth().signOut();
         startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
         finish();
     }

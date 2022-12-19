@@ -144,10 +144,10 @@ public class SetNewPassword extends AppCompatActivity {
 
 
         if (val.isEmpty()) {
-            newPassword.setError("Field cannot be empty");
+            newPassword.setError("Esse campo não pode ficar vazio!");
             return false;
         } else if (!val.matches(passwordVal)) {
-            newPassword.setError("At least 4 letters with no space!");
+            newPassword.setError("Informe ao menos 4 digitos!");
             return false;
         } else {
             newPassword.setError(null);
@@ -162,10 +162,10 @@ public class SetNewPassword extends AppCompatActivity {
 
 
         if (confirmedPasswordFromUser.isEmpty()) {
-            confirmNewPassword.setError("Field cannot be empty");
+            confirmNewPassword.setError("Esse campo não pode ficar vazio!");
             return false;
         } else if (!passwordFromUser.equals(confirmedPasswordFromUser)) {
-            confirmNewPassword.setError("Password Does not match! Please try again.");
+            confirmNewPassword.setError("Senha inválida tente novamente.");
             return false;
         } else {
             confirmNewPassword.setError(null);

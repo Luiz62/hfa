@@ -87,7 +87,7 @@ public class SingUpPharmacy extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), PharmacyDashboard.class);
 
         if (mAuth.getCurrentUser() != null) {
-            DatabaseReference reference = rootNode.getReference("pharmacies");
+            DatabaseReference reference = rootNode.getReference("users");
 
             PharmacyHelperClass addNewUser = new PharmacyHelperClass(_name, _email, _cnpj);
             reference.child(Objects.requireNonNull(mAuth.getUid())).setValue(addNewUser);
@@ -114,7 +114,7 @@ public class SingUpPharmacy extends AppCompatActivity {
 
     private boolean validateName() {
         if (_name.isEmpty()) {
-            namePharmacy.setError("Field can not be empty");
+            namePharmacy.setError("Esse campo não pode ser vazio!");
             return false;
         } else {
             namePharmacy.setError(null);
@@ -125,13 +125,11 @@ public class SingUpPharmacy extends AppCompatActivity {
     }
 
     private boolean validateCnpj() {
-//        String checkspaces = "\\A\\w{1,20}\\z";
-
         if (_cnpj.isEmpty()) {
-            cnpjPharmacy.setError("Field can not be empty");
+            cnpjPharmacy.setError("Esse campo não pode ser vazio!");
             return false;
         } else if (_cnpj.length() > 14) {
-            cnpjPharmacy.setError("Username is too large!");
+            cnpjPharmacy.setError("Informe apenas 14 digitos!");
             return false;
         } else {
             cnpjPharmacy.setError(null);
@@ -145,10 +143,10 @@ public class SingUpPharmacy extends AppCompatActivity {
         String checkEmail = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         if (_email.isEmpty()) {
-            emailPharmacy.setError("Field can not be empty");
+            emailPharmacy.setError("Esse campo não pode ser vazio!");
             return false;
         } else if (!_email.matches(checkEmail)) {
-            emailPharmacy.setError("Invalid Email!");
+            emailPharmacy.setError("E-mail inválido!");
             return false;
         } else {
             emailPharmacy.setError(null);
@@ -170,10 +168,10 @@ public class SingUpPharmacy extends AppCompatActivity {
                 "$";
 
         if (_password.isEmpty()) {
-            passwordPharmacy.setError("Field can not be empty");
+            passwordPharmacy.setError("Esse campo não pode ser vazio!");
             return false;
         } else if (!_password.matches(checkPassword)) {
-            passwordPharmacy.setError("Password should contain 6 characters!");
+            passwordPharmacy.setError("Informe uma senha com no minino 6 digitos!");
             return false;
         } else {
             passwordPharmacy.setError(null);

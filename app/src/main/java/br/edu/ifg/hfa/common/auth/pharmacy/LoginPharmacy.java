@@ -147,11 +147,11 @@ public class LoginPharmacy extends AppCompatActivity {
 
     private boolean validateFields() {
         if (_email.isEmpty()) {
-            email.setError("Phone number can not be empty");
+            email.setError("Esse campo não pode ser vazio!");
             email.requestFocus();
             return false;
         } else if (_password.isEmpty()) {
-            password.setError("Password can not be empty");
+            password.setError("Esse campo não pode ser vazio!");
             password.requestFocus();
             return false;
         } else {

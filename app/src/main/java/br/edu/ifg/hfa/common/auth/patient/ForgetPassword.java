@@ -116,7 +116,7 @@ public class ForgetPassword extends AppCompatActivity {
 
                 } else {
                     progressBar.setVisibility(View.GONE);
-                    phoneNumberTextField.setError("No such user exist!");
+                    phoneNumberTextField.setError("Esse telefone não existe!");
                     phoneNumberTextField.requestFocus();
                 }
             }
@@ -170,11 +170,11 @@ public class ForgetPassword extends AppCompatActivity {
         String checkspaces = "\\A\\w{1,20}\\z";
 
         if (_phoneNumber.isEmpty()) {
-            phoneNumberTextField.setError("Phone number can not be empty");
+            phoneNumberTextField.setError("Esse campo não pode ficar vazio!");
             phoneNumberTextField.requestFocus();
             return false;
         } else if (!_phoneNumber.matches(checkspaces)) {
-            phoneNumberTextField.setError("No White spaces are allowed!");
+            phoneNumberTextField.setError("Sem espaços entre os números!");
             return false;
         } else {
             phoneNumberTextField.setError(null);

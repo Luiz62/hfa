@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:icon="@drawable/menu_dashboard_icon"/>
+    </group>
+
+
+    <item android:title="Perfil">
+        <menu>
+
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_profile"
+                    android:title="@string/profile"
+                    android:icon="@drawable/menu_profile_icon"/>
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="@string/logout"
+                    android:icon="@drawable/menu_logout_icon"/>
+            </group>
+
+        </menu>
+    </item>
+
+    <item android:title="Menu">
+        <menu>
+
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_receitas"
+                    android:title="@string/cadastrar_medicamento"
+                    android:icon="@drawable/ic_baseline_assignment_24"/>
+                <item
+                    android:id="@+id/nav_historico"
+                    android:title="@string/validar_receita"
+                    android:icon="@drawable/ic_baseline_history_24"/>
+                <item
+                    android:id="@+id/nav_consultas"
+                    android:title="@string/verificar_receita"
+                    android:icon="@drawable/ic_baseline_medical_services_24"/>
+                <item
+                    android:id="@+id/nav_farmacia"
+                    android:title="@string/verificar_crm"
+                    android:icon="@drawable/shop_icon"/>
+                <item
+                    android:id="@+id/nav_report"
+                    android:title="@string/relatorio_vendas"
+                    android:icon="@drawable/ic_baseline_report_24"/>
+                <item
+                    android:id="@+id/nav_help"
+                    android:title="@string/ajuda"
+                    android:icon="@drawable/ic_baseline_help_100"/>
+            </group>
+
+        </menu>
+    </item>
+</menu>

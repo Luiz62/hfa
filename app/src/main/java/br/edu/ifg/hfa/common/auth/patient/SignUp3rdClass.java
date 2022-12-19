@@ -175,10 +175,10 @@ public class SignUp3rdClass extends AppCompatActivity {
     private boolean validatePhoneNumber() {
         String checkspaces = "\\A\\w{1,20}\\z";
         if (_phoneNumber.isEmpty()) {
-            phoneNumber.setError("Enter valid phone number");
+            phoneNumber.setError("Informe um número válido");
             return false;
         } else if (!_phoneNumber.matches(checkspaces)) {
-            phoneNumber.setError("No White spaces are allowed!");
+            phoneNumber.setError("Não são permitidos espaços em branco!");
             return false;
         } else {
             phoneNumber.setError(null);
