@@ -49,4 +49,7 @@ dependencies {
 
     //OTP PIN View Design
     implementation 'io.github.chaosleung:pinview:1.4.4'
+
+    //QRCODE
+    implementation 'com.github.androidmads:QRGenerator:1.0.1'
 }

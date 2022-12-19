@@ -26,31 +26,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
-                android:text="@string/text_id_prescriptions"
+                android:text="@string/local_consulta_prescriptions"
                 android:textColor="@color/secodary_color_app"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textNomeMedico"
+                android:id="@+id/textData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="end"
-                android:text="@string/text_name_prescriptions"
+                android:text="@string/text_date_prescriptions"
                 android:textColor="@color/secodary_color_app"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textData"
+            android:id="@+id/textNomeMedico"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="5"
-            android:text="@string/text_date_prescriptions"
+            android:text="@string/text_name_doctor_prescriptions"
             android:textColor="@color/secodary_color_app"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
 
     </LinearLayout>

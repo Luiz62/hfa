@@ -29,7 +29,7 @@
     <string name="fourth_slide_desc">We will handle everything for you. As you have the app in your pocket then you don\'t have to worry about anything.  </string>
 
     <!--     MENU     -->
-    <string name="home">PRINCIPAL</string>
+    <string name="home">Principal</string>
     <string name="search">Pesquisar</string>
 
     <!--     AUTH     -->
@@ -98,12 +98,25 @@
     <string name="exames">Exames</string>
     <string name="alarmes">Alarmes</string>
 
+    <string name="crm_medico">crm do medico</string>
+    <string name="nome_medico">nome do médico</string>
+    <string name="local_consulta">LOCAL DA CONSULTA: </string>
+    <string name="nome_paciente">NOME DO PACIENTE: </string>
+    <string name="medicamentos">MEDICAMENTOS: </string>
+    <string name="qrcode">QRCODE: </string>
+    <string name="data_prescription">DATA: </string>
+    <string name="nome_default">FULANO</string>
+    <string name="data_default">20/10/2022</string>
+
     <!-- Menu Receita -->
-    <string name="prescriptions_available">Receitas Disponiveis</string>
+    <string name="prescriptions_available">Suas Receitas</string>
     <string name="text_id_prescriptions">ID</string>
-    <string name="text_name_prescriptions">Nome Médico</string>
+    <string name="local_consulta_prescriptions">Local Consulta</string>
+    <string name="text_name_doctor_prescriptions">Nome Médico</string>
     <string name="text_date_prescriptions">Data</string>
 
+    <string name="text_name_resume_prescriptions">Nome Medicamento</string>
+    <string name="text_description_resume_prescriptions">Descrição Medicamento</string>
 
     <!--  Dashboard Pharmacy  -->
     <string name="cadastrar_medicamento">Novo Remédio</string>

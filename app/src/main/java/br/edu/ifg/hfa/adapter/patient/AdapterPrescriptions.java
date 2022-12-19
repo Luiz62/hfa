@@ -42,7 +42,7 @@ public class AdapterPrescriptions extends RecyclerView.Adapter<AdapterPrescripti
     public void onBindViewHolder(MyViewHolder holder, int position) {
         PrescriptionsHelperClass prescription = prescriptions.get(position);
 
-        holder.id.setText(prescription.getNomeHospital());
+        holder.id.setText(prescription.getLocalConsulta());
         holder.nomeMedico.setText(prescription.getNomeMedico());
         holder.data.setText(prescription.getData());
     }

@@ -1,34 +1,28 @@
-package br.edu.ifg.hfa.common.dashboard;
+package br.edu.ifg.hfa.common.dashboard.pharmacy;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.adapter.RecyclerViewInterface;
 import br.edu.ifg.hfa.adapter.patient.AdapterPrescriptions;
 import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
-import br.edu.ifg.hfa.common.dashboard.pharmacy.ResumePrescriptionActivity;
 import br.edu.ifg.hfa.db.DbConnection;
 import br.edu.ifg.hfa.db.PrescriptionsHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
@@ -130,6 +124,7 @@ public class PrescriptionsActivity extends AppCompatActivity implements Recycler
                 ResumePrescriptionActivity.class);
 
         intent.putExtra("ID_PRESCRIPTION", prescriptions.get(position).getId());
+        intent.putExtra(SessionManager.KEY_CPF, cpf);
 
         startActivity(intent);
     }

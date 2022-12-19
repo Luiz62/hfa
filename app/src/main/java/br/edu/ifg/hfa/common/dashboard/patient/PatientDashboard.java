@@ -23,7 +23,7 @@ import br.edu.ifg.hfa.common.SplashScreen;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
 import br.edu.ifg.hfa.common.dashboard.pharmacy.PharmacyDashboard;
 import br.edu.ifg.hfa.db.SessionManager;
-import br.edu.ifg.hfa.common.dashboard.PrescriptionsActivity;
+import br.edu.ifg.hfa.common.dashboard.pharmacy.PrescriptionsActivity;
 
 public class PatientDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -109,7 +109,7 @@ public class PatientDashboard extends AppCompatActivity implements NavigationVie
 
         switch (item.getItemId()) {
             case R.id.nav_home:
-                startActivity(new Intent(getApplicationContext(), PharmacyDashboard.class));
+                startActivity(new Intent(getApplicationContext(), PatientDashboard.class));
                 break;
             case R.id.nav_logout:
                 mAuth.signOut();
