@@ -13,6 +13,8 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.adapter.AdapterResumePrescriptions;
@@ -53,6 +56,8 @@ public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
 
     private final PharmacyDetailPrescriptionsHelperClass helperClass = new PharmacyDetailPrescriptionsHelperClass();
 
+    private String cpf, id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +67,6 @@ public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
 
         String[] values = getIntent().getStringExtra("ID_PRESCRIPTION").split(";");
 
-        String cpf, id;
         cpf = values[0];
         id = values[1];
 
@@ -145,9 +149,16 @@ public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
 
                     DatabaseReference reference = rootNode.getReference("pharmacy")
                             .child("prescriptions")
-                            .child(firebaseUser.getUid());
+                            .child(firebaseUser.getUid())
+                            .child(UUID.randomUUID().toString());
 
-                    reference.setValue(helperClass);
+                    reference.setValue(helperClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            resumePrescriptionsRef.removeEventListener(valueEventListenerPrescriptions);
+                            resumePrescriptionsRef.removeValue();
+                        }
+                    });
                 }
 
                 @Override
@@ -156,7 +167,6 @@ public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
                 }
             });
         }
-
 
         Intent intent = new Intent(getApplicationContext(), VerificarReceitaActivity.class);
 

@@ -8,7 +8,7 @@ public class PharmacyPrescriptionsHelperClass {
 
     private String nomePaciente;
 
-    private String data;
+    private String dataValidacao;
 
     public PharmacyPrescriptionsHelperClass() {
     }
@@ -37,11 +37,11 @@ public class PharmacyPrescriptionsHelperClass {
         this.nomePaciente = nomePaciente;
     }
 
-    public String getData() {
-        return data;
+    public String getDataValidacao() {
+        return dataValidacao;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setDataValidacao(String dataValidacao) {
+        this.dataValidacao = dataValidacao;
     }
 }

@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -44,11 +46,16 @@ public class PrescriptionsActivity extends AppCompatActivity implements Recycler
 
     private SessionManager sessionManager;
 
+    private RelativeLayout progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_prescriptions);
+
+        progressBar = findViewById(R.id.menu_prescriptions_progress_bar);
+
+        progressBar.setVisibility(View.VISIBLE);
 
         sessionManager = new SessionManager(this, SessionManager.SESSION_USERSESSION);
         HashMap<String, String> usersDetails = sessionManager.getUsersDetailFromSession();
@@ -84,6 +91,7 @@ public class PrescriptionsActivity extends AppCompatActivity implements Recycler
                     .child(cpf);
 
             valueEventListenerPrescriptions = prescriptionsRef.addValueEventListener(new ValueEventListener() {
+                @SuppressLint("NotifyDataSetChanged")
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     prescriptions.clear();
@@ -97,6 +105,7 @@ public class PrescriptionsActivity extends AppCompatActivity implements Recycler
                     }
 
                     adapterPrescriptions.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
                 }
 
                 @Override

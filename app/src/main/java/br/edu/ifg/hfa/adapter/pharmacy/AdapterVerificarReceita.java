@@ -45,7 +45,7 @@ public class AdapterVerificarReceita extends RecyclerView.Adapter<AdapterVerific
 
         holder.nomePaciente.setText(prescription.getNomePaciente());
         holder.nomeMedico.setText(prescription.getNomeMedico());
-        holder.data.setText(prescription.getData());
+        holder.data.setText(prescription.getDataValidacao());
     }
 
 
