@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -58,12 +59,18 @@ public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
 
     private String cpf, id;
 
+    private RelativeLayout progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pharmacy_qrcode_scanner);
 
         recyclerView = findViewById(R.id.recycler_view_qrcode_scanner);
+
+        progressBar = findViewById(R.id.qrcode_scanner_relative_layout);
+
+        progressBar.setVisibility(View.VISIBLE);
 
         String[] values = getIntent().getStringExtra("ID_PRESCRIPTION").split(";");
 
@@ -93,6 +100,7 @@ public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
                     }
 
                     adapterScannerQrcode.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 
