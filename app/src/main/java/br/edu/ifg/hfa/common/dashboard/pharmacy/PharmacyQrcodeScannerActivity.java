@@ -90,7 +90,7 @@ public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
                 prescriptions = snapshot.
                         getValue(PrescriptionsHelperClass.class);
 
-                DataSnapshot medicamentos = snapshot.child("medicamentos");
+                DataSnapshot medicamentos = snapshot.child("medications");
                 for (DataSnapshot dados: medicamentos.getChildren()) {
 
                     MedicationHelperClass medication = dados.getValue(MedicationHelperClass.class);

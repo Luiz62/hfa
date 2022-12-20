@@ -99,16 +99,23 @@
     <string name="exames">Exames</string>
     <string name="alarmes">Alarmes</string>
 
-    <string name="crm_medico">crm do medico</string>
-    <string name="nome_medico">nome do médico</string>
+    <string name="crm_medico">Crm do médico:</string>
+    <string name="nome_medico">Nome do médico:</string>
     <string name="local_consulta">Local da consulta: </string>
     <string name="nome_paciente">Nome do paciente: </string>
     <string name="medicamentos">Medicamentos: </string>
     <string name="qrcode">QRCODE: </string>
     <string name="data_prescription">Data: </string>
+    <string name="data_prescription_create">Data Criação Receita: </string>
+    <string name="data_prescription_validation">Data Validação Receita: </string>
     <string name="nome_default">FULANO</string>
     <string name="data_default">20/10/2022</string>
     <string name="confirmar">Confirmar</string>
+
+    <string name="nome_farmacia">Nome da farmácia:</string>
+    <string name="email_farmacia">E-mail da farmácia:</string>
+    <string name="cnpj_farmacia">Cnpj da farmácia:</string>
+
 
     <!-- Menu Receita -->
     <string name="prescriptions_available">Suas Receitas</string>

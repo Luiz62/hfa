@@ -57,7 +57,7 @@ public class ResumePrescriptionActivity extends AppCompatActivity {
         crmMedico = findViewById(R.id.crm_medico);
         localConsulta = findViewById(R.id.local_consulta);
         nomePaciente = findViewById(R.id.nome_paciente);
-        data = findViewById(R.id.data_prescription);
+        data = findViewById(R.id.data_prescription_validation);
         qrcode = findViewById(R.id.qrcode_imagem);
         recyclerView = findViewById(R.id.recycler_view);
         backBtn = findViewById(R.id.back_pressed_resume);
@@ -107,7 +107,7 @@ public class ResumePrescriptionActivity extends AppCompatActivity {
                                 }
                             }
 
-                            DataSnapshot medicamentos = snapshot.child("medicamentos");
+                            DataSnapshot medicamentos = snapshot.child("medications");
                             for (DataSnapshot dados: medicamentos.getChildren()) {
 
                                 MedicationHelperClass medication = dados.getValue(MedicationHelperClass.class);

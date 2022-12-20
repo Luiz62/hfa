@@ -59,6 +59,8 @@ public class VerificarReceitaActivity extends AppCompatActivity implements Recyc
 
     private RelativeLayout progressBar;
 
+    private FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,7 +114,7 @@ public class VerificarReceitaActivity extends AppCompatActivity implements Recyc
 
     @Override
     protected void onStart() {
-        FirebaseUser user = DbConnection.getAuth().getCurrentUser();
+        user = DbConnection.getAuth().getCurrentUser();
         if (user != null) {
             if (!user.getUid().isEmpty()) {
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("pharmacy")
@@ -159,11 +161,12 @@ public class VerificarReceitaActivity extends AppCompatActivity implements Recyc
 
     @Override
     public void onItemClick(int position) {
-//        Intent intent = new Intent(VerificarReceitaActivity.this,
-//                ResumePrescriptionActivity.class);
-//
-//        intent.putExtra("ID_PRESCRIPTION", prescriptions.get(position).getId());
-//        startActivity(intent);
+        Intent intent = new Intent(VerificarReceitaActivity.this,
+                PharmacyResumePrescriptionActivity.class);
+
+        intent.putExtra("PHARMACY_PRESCRIPTIONS_ID", user.getUid());
+        intent.putExtra("PHARMACY_HASH", prescriptions.get(position).getId());
+        startActivity(intent);
     }
 
     ActivityResultLauncher<ScanOptions> barLauncher = registerForActivityResult(new ScanContract(), result -> {
