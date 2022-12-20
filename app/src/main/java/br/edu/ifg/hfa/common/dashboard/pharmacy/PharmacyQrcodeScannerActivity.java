@@ -9,15 +9,19 @@ import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import br.edu.ifg.hfa.R;
@@ -26,7 +30,10 @@ import br.edu.ifg.hfa.common.auth.patient.LoginPatient;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
 import br.edu.ifg.hfa.db.DbConnection;
 import br.edu.ifg.hfa.model.entity.MedicationHelperClass;
+import br.edu.ifg.hfa.model.entity.PharmacyDetailPrescriptionsHelperClass;
+import br.edu.ifg.hfa.model.entity.PharmacyHelperClass;
 import br.edu.ifg.hfa.model.entity.PrescriptionsHelperClass;
+import br.edu.ifg.hfa.utils.DateUtil;
 
 public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
 
@@ -41,6 +48,10 @@ public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
     private AdapterResumePrescriptions adapterScannerQrcode;
 
     private PrescriptionsHelperClass prescriptions;
+
+    private PharmacyHelperClass pharmacyHelperClass;
+
+    private final PharmacyDetailPrescriptionsHelperClass helperClass = new PharmacyDetailPrescriptionsHelperClass();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +107,55 @@ public class PharmacyQrcodeScannerActivity extends AppCompatActivity {
     }
 
     public void onClickButton(View view) {
+
+        FirebaseDatabase rootNode = DbConnection.getInstance();
+
+        if (!medications.isEmpty())
+            helperClass.setMedications(medications);
+
+        if (prescriptions != null) {
+            helperClass.setNomePaciente(prescriptions.getNomePaciente());
+            helperClass.setNomeMedico(prescriptions.getNomeMedico());
+            helperClass.setCrmMedico(prescriptions.getCrmMedico());
+            helperClass.setDataValidacao(DateUtil
+                    .dateToString(new Date(), DateUtil.PATTERN_DEFAULT));
+            helperClass.setDataCriacaoReceita(prescriptions.getData());
+            helperClass.setLocalConsulta(prescriptions.getLocalConsulta());
+        }
+
+        FirebaseUser firebaseUser = DbConnection.getAuth().getCurrentUser();
+        if (firebaseUser != null) {
+            DatabaseReference userRef = rootNode.getReference("users")
+                    .child(firebaseUser.getUid());
+
+            userRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    pharmacyHelperClass = snapshot.getValue(PharmacyHelperClass.class);
+                    if (pharmacyHelperClass != null) {
+                        if (pharmacyHelperClass.getEmail() != null)
+                            helperClass.setEmailFarmacia(pharmacyHelperClass.getEmail());
+
+                        if (pharmacyHelperClass.getCnpj() != null)
+                            helperClass.setCnpjFarmacia(pharmacyHelperClass.getCnpj());
+
+                        if (pharmacyHelperClass.getName() != null)
+                            helperClass.setNomeFarmacia(pharmacyHelperClass.getName());
+                    }
+
+                    DatabaseReference reference = rootNode.getReference("pharmacy")
+                            .child("prescriptions")
+                            .child(firebaseUser.getUid());
+
+                    reference.setValue(helperClass);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
 
 
         Intent intent = new Intent(getApplicationContext(), VerificarReceitaActivity.class);

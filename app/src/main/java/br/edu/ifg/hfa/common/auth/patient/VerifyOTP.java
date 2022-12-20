@@ -29,6 +29,7 @@ import java.util.Objects;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.dashboard.patient.RetailerDashboardPatient;
+import br.edu.ifg.hfa.db.DbConnection;
 import br.edu.ifg.hfa.model.entity.PatientHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
 import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
@@ -116,7 +117,7 @@ public class VerifyOTP extends AppCompatActivity {
 
     private void storeNewUsersData() {
         if (this.mAuth.getCurrentUser() != null) {
-            FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
+            FirebaseDatabase rootNode = DbConnection.getInstance();
             DatabaseReference reference = rootNode.getReference("users");
 
             PatientHelperClass addNewUser;

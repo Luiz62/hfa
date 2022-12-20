@@ -4,6 +4,9 @@ public class PharmacyHelperClass {
 
     private String name, cnpj, email, password;
 
+    public PharmacyHelperClass() {
+    }
+
     public PharmacyHelperClass(String name, String cnpj, String email, String password) {
         this.name = name;
         this.cnpj = cnpj;
