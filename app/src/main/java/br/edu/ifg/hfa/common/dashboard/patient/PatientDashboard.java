@@ -21,9 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.SplashScreen;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
-import br.edu.ifg.hfa.common.dashboard.pharmacy.PharmacyDashboard;
 import br.edu.ifg.hfa.db.SessionManager;
-import br.edu.ifg.hfa.common.dashboard.pharmacy.PrescriptionsActivity;
 
 public class PatientDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

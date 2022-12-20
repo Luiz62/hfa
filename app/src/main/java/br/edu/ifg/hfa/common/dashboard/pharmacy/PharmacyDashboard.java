@@ -33,6 +33,9 @@ public class PharmacyDashboard extends AppCompatActivity  implements NavigationV
 
     private FirebaseAuth mAuth;
 
+    LinearLayout novoRemedio, validarReceita, verificarReceita;
+    LinearLayout verificarCrm, relatorios, ajuda;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,20 @@ public class PharmacyDashboard extends AppCompatActivity  implements NavigationV
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view_farmacia);
+
+        novoRemedio = findViewById(R.id.novo_remedio);
+        validarReceita = findViewById(R.id.validar_receita);
+        verificarReceita = findViewById(R.id.verificar_receita);
+        verificarCrm = findViewById(R.id.verificar_crm);
+        relatorios = findViewById(R.id.relatorios);
+        ajuda = findViewById(R.id.ajuda);
+
+        validarReceita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), VerificarReceitaActivity.class));
+            }
+        });
 
         navigationDrawer();
     }

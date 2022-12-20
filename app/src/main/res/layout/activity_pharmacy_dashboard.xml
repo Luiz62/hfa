@@ -83,6 +83,7 @@
                         app:cardElevation="2dp">
 
                         <LinearLayout
+                            android:id="@+id/novo_remedio"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/color_accent"
@@ -114,6 +115,7 @@
                         app:cardElevation="2dp">
 
                         <LinearLayout
+                            android:id="@+id/validar_receita"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/color_accent"
@@ -161,6 +163,7 @@
                             app:cardElevation="2dp">
 
                             <LinearLayout
+                                android:id="@+id/verificar_receita"
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
                                 android:background="@color/color_accent"
@@ -192,6 +195,7 @@
                             app:cardElevation="2dp">
 
                             <LinearLayout
+                                android:id="@+id/verificar_crm"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@color/color_accent"
@@ -232,6 +236,7 @@
                             app:cardElevation="2dp">
 
                             <LinearLayout
+                                android:id="@+id/relatorios"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@color/color_accent"
@@ -263,6 +268,7 @@
                             app:cardElevation="2dp">
 
                             <LinearLayout
+                                android:id="@+id/ajuda"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@color/color_accent"

@@ -101,13 +101,14 @@
 
     <string name="crm_medico">crm do medico</string>
     <string name="nome_medico">nome do médico</string>
-    <string name="local_consulta">LOCAL DA CONSULTA: </string>
-    <string name="nome_paciente">NOME DO PACIENTE: </string>
-    <string name="medicamentos">MEDICAMENTOS: </string>
+    <string name="local_consulta">Local da consulta: </string>
+    <string name="nome_paciente">Nome do paciente: </string>
+    <string name="medicamentos">Medicamentos: </string>
     <string name="qrcode">QRCODE: </string>
-    <string name="data_prescription">DATA: </string>
+    <string name="data_prescription">Data: </string>
     <string name="nome_default">FULANO</string>
     <string name="data_default">20/10/2022</string>
+    <string name="confirmar">Confirmar</string>
 
     <!-- Menu Receita -->
     <string name="prescriptions_available">Suas Receitas</string>
@@ -127,6 +128,11 @@
     <string name="relatorio_vendas">Relatórios</string>
     <string name="ajuda">Ajuda</string>
 
+    <string name="receitas_validadas">Receitas Validadas</string>
+
+
+    <string name="floating_action_button">Add new prescription</string>
+
     <!--  Titles and Descriptions  -->
     <string name="featured_locations">All Featured Locations</string>
     <string name="featured_locations_description">All the locations that are featured and have the top demand in town!</string>
@@ -139,5 +145,6 @@
     <!--     All Categories Menu names     -->
     <string name="car_rent">Car Rent</string>
     <string name="all_shops">All Shops</string>
+    <string name="confirme_medicamentos">Confirme os medicamentos</string>
 
 </resources>

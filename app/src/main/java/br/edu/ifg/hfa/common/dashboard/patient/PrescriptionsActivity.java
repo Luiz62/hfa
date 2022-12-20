@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.dashboard.pharmacy;
+package br.edu.ifg.hfa.common.dashboard.patient;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +22,6 @@ import java.util.List;
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.adapter.RecyclerViewInterface;
 import br.edu.ifg.hfa.adapter.patient.AdapterPrescriptions;
-import br.edu.ifg.hfa.common.dashboard.patient.PatientDashboard;
 import br.edu.ifg.hfa.db.DbConnection;
 import br.edu.ifg.hfa.model.entity.PrescriptionsHelperClass;
 import br.edu.ifg.hfa.db.SessionManager;
@@ -56,7 +55,7 @@ public class PrescriptionsActivity extends AppCompatActivity implements Recycler
 
         cpf = usersDetails.get(SessionManager.KEY_CPF);
 
-        backBtn = findViewById(R.id.back_pressed);
+        backBtn = findViewById(R.id.back_pressed_prescriptions);
 
         recyclerView = findViewById(R.id.recycler_view);
 

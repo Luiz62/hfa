@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.adapter.patient;
+package br.edu.ifg.hfa.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".common.dashboard.pharmacy.PrescriptionsActivity"
+    tools:context=".common.dashboard.patient.PrescriptionsActivity"
     android:background="@color/primary_color_app">
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:layout_height="?actionBarSize">
 
             <ImageView
-                android:id="@+id/back_pressed"
+                android:id="@+id/back_pressed_prescriptions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

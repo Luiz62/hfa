@@ -1,4 +1,4 @@
-package br.edu.ifg.hfa.common.dashboard.pharmacy;
+package br.edu.ifg.hfa.common.dashboard.patient;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +22,7 @@ import java.util.List;
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 import br.edu.ifg.hfa.R;
-import br.edu.ifg.hfa.adapter.patient.AdapterResumePrescriptions;
+import br.edu.ifg.hfa.adapter.AdapterResumePrescriptions;
 import br.edu.ifg.hfa.db.DbConnection;
 import br.edu.ifg.hfa.model.entity.MedicationHelperClass;
 import br.edu.ifg.hfa.model.entity.PrescriptionsHelperClass;
@@ -64,7 +64,7 @@ public class ResumePrescriptionActivity extends AppCompatActivity {
 
         if (!idPrescriptions.isEmpty()) {
 
-            QRGEncoder encoder = new QRGEncoder(idPrescriptions, null,
+            QRGEncoder encoder = new QRGEncoder(String.format("%s;%s", cpf, idPrescriptions), null,
                     QRGContents.Type.TEXT, 800);
 
             encoder.setColorBlack(0xFFE5E5E5);
