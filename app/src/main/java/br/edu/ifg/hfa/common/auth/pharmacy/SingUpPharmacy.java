@@ -93,8 +93,8 @@ public class SingUpPharmacy extends AppCompatActivity {
             reference.child(Objects.requireNonNull(mAuth.getUid())).setValue(addNewUser);
 
             SessionManager sessionManager = new SessionManager(this,
-                    SessionManager.SESSION_USERSESSION);
-            sessionManager.createLoginSession(_name, _email, _cnpj);
+                    SessionManager.SESSION_PHARMACYSESSION);
+            sessionManager.createLoginSessionPharmacy(_name, _email, _cnpj);
 
             Toast.makeText(this, "Cadastro realizado!", Toast.LENGTH_SHORT).show();
 

@@ -116,8 +116,8 @@ public class PharmacyDashboard extends AppCompatActivity  implements NavigationV
                 mAuth.signOut();
                 startActivity(new Intent(getApplicationContext(), SplashScreen.class));
                 break;
-            case R.id.nav_profile:
-                startActivity(new Intent(getApplicationContext(), RetailerStartUpScreen.class));
+            case R.id.nav_profile_pharmacy:
+                startActivity(new Intent(getApplicationContext(), RetailerDashboardFarmacia.class));
         }
 
         return true;

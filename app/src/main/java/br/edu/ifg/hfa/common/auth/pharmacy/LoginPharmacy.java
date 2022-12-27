@@ -20,16 +20,19 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
 import br.edu.ifg.hfa.R;
 import br.edu.ifg.hfa.common.auth.patient.ForgetPassword;
 import br.edu.ifg.hfa.common.auth.patient.RetailerStartUpScreen;
-import br.edu.ifg.hfa.db.SessionManager;
 import br.edu.ifg.hfa.common.dashboard.pharmacy.PharmacyDashboard;
+import br.edu.ifg.hfa.db.SessionManager;
 import br.edu.ifg.hfa.utils.CheckInternet;
 
 public class LoginPharmacy extends AppCompatActivity {
@@ -99,24 +102,45 @@ public class LoginPharmacy extends AppCompatActivity {
     }
 
     private void successfulLogin() {
+        Query checkUser = FirebaseDatabase.getInstance().getReference("users")
+                .orderByChild(Objects.requireNonNull(mAuth.getUid()));
+        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
 
-        if (mAuth.getCurrentUser() != null) {
-            DatabaseReference reference = rootNode.getReference("pharmacies");
+                    String _name = dataSnapshot.child(mAuth.getUid()).child("name")
+                            .getValue(String.class);
+                    String _cnpj = dataSnapshot.child(mAuth.getUid()).child("cnpj")
+                            .getValue(String.class);
+                    String _email = dataSnapshot.child(mAuth.getUid()).child("email")
+                            .getValue(String.class);
 
-            String _name = reference.child(Objects.requireNonNull(mAuth.getUid())).child("name")
-                    .getKey();
-            String _cnpjPharmacy = reference.child(mAuth.getUid()).child("cnpj")
-                    .getKey();
+                    SessionManager sessionManager = new SessionManager(LoginPharmacy.this,
+                            SessionManager.SESSION_PHARMACYSESSION);
 
-            SessionManager sessionManager = new SessionManager(this,
-                    SessionManager.SESSION_USERSESSION);
-            sessionManager.createLoginSession(_name, mAuth.getCurrentUser().getEmail(),
-                    _cnpjPharmacy);
+                    sessionManager.createLoginSessionPharmacy(_name, _cnpj, _email);
 
-            startActivity(new Intent(getApplicationContext(), PharmacyDashboard.class));
-            finish();
-            progressbar.setVisibility(View.GONE);
-        }
+                    progressbar.setVisibility(View.GONE);
+
+                    Toast.makeText(LoginPharmacy.this, "Sucesso no login!",
+                            Toast.LENGTH_SHORT).show();
+
+                    startActivity(new Intent(getApplicationContext(), PharmacyDashboard.class));
+                } else {
+                    progressbar.setVisibility(View.GONE);
+                    Toast.makeText(LoginPharmacy.this, "Falha no login!",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressbar.setVisibility(View.GONE);
+                Toast.makeText(LoginPharmacy.this, databaseError.getMessage(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void showCustomDialog() {

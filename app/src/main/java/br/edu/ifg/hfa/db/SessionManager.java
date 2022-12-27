@@ -12,6 +12,7 @@ public class SessionManager {
     Context context;
 
     public static final String SESSION_USERSESSION = "userLoginSession";
+    public static final String SESSION_PHARMACYSESSION = "pharmacyLoginSession";
     public static final String SESSION_REMEMMBERME = "rememberMe";
 
     private static final String IS_LOGIN = "IsLoggedIn";
@@ -52,7 +53,7 @@ public class SessionManager {
         editor.commit();
     }
 
-    public void createLoginSession(String name, String cnpj, String email) {
+    public void createLoginSessionPharmacy(String name, String cnpj, String email) {
         editor.putBoolean(IS_LOGIN, true);
 
         editor.putString(KEY_NAME, name);
@@ -72,6 +73,16 @@ public class SessionManager {
         userData.put(KEY_PASSWORD, usersSession.getString(KEY_PASSWORD, null));
         userData.put(KEY_DATE, usersSession.getString(KEY_DATE, null));
         userData.put(KEY_GENDER, usersSession.getString(KEY_GENDER, null));
+
+        return userData;
+    }
+
+    public HashMap<String, String> getPharmacyDetailFromSession() {
+        HashMap<String, String> userData = new HashMap<String, String>();
+
+        userData.put(KEY_NAME, usersSession.getString(KEY_NAME, null));
+        userData.put(KEY_EMAIL, usersSession.getString(KEY_EMAIL, null));
+        userData.put(KEY_CNPJ, usersSession.getString(KEY_CNPJ, null));
 
         return userData;
     }

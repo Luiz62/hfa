@@ -25,12 +25,12 @@ public class RetailerDashboardFarmacia extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.textViewFarmacia);
 
-        sessionManager = new SessionManager(this, SessionManager.SESSION_USERSESSION);
-        HashMap<String, String> usersDetails = sessionManager.getUsersDetailFromSession();
+        sessionManager = new SessionManager(this, SessionManager.SESSION_PHARMACYSESSION);
+        HashMap<String, String> pharmacyDetails = sessionManager.getPharmacyDetailFromSession();
 
-        String name = usersDetails.get(SessionManager.KEY_NAME);
-        String email = usersDetails.get(SessionManager.KEY_EMAIL);
-        String cnpj = usersDetails.get(SessionManager.KEY_CNPJ);
+        String name = pharmacyDetails.get(SessionManager.KEY_NAME);
+        String email = pharmacyDetails.get(SessionManager.KEY_EMAIL);
+        String cnpj = pharmacyDetails.get(SessionManager.KEY_CNPJ);
 
         textView.setText(
                 "Nome: " + name + "\n" +
